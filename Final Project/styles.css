@@ -1,6 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset some default browser styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
+    background-color: #be8f0e;
+    color: rgb(206, 236, 128);
+    padding: 10px;
+    text-align: center;
+    font-family: Broadway;
+    font-size: 1.9rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(65, 123, 59);
+    word-spacing: 2px;
+
+}
+
+
 h1 {
     font-size: 2.5rem;
     color: brown ;
-    font-style: italic;
-    ;
+    text-align: center;
 }
+
+
+
