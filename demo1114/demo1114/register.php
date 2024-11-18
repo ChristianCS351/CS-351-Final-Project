@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $confirm_password = $_POST['confirm_password'];
         
         if ($password !== $confirm_password) {
-            $error_message = 'Passwords do not match';
+            $error_message = 'Your password does not seem to match.';
         } else if (strlen($password) < 6) {
-            $error_message = 'Password must be at least 6 characters';
+            $error_message = 'Your password must be at least 8 characters.';
         } else {
             if (register_user($pdo, $username, $password)) {
-                $success_message = 'Registration successful! You can now login.';
+                $success_message = 'Your registration was successful! You can now login to begin unbanning books.';
             } else {
-                $error_message = 'Username already exists';
+                $error_message = 'This username already exists.';
             }
         }
     }
@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register - Betty's Book Banning</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Christian's Book Unbanning Program - Register</title>
+    <link rel="stylesheet" href="stylesP3.css">
 </head>
 <body>
     <div class="auth-container">
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <button type="submit" name="register">Register</button>
         </form>
-        <p>Already have an account? <a href="login.php">Login here</a></p>
+        <p>Already have an account with us? <a href="login.php">Please Login Here</a></p>
     </div>
 </body>
 </html>

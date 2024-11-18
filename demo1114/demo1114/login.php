@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Betty's Book Banning</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Christian's Book Unbanning Program - Login</title>
+    <link rel="stylesheet" href="stylesP3.css">
 </head>
 <body>
     <div class="auth-container">
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <button type="submit" name="login">Login</button>
         </form>
-        <p>Don't have an account? <a href="register.php">Register here</a></p>
+        <p>Don't have an account just yet? <a href="register.php">Please Register Here, Today!</a></p>
     </div>
 </body>
 </html>

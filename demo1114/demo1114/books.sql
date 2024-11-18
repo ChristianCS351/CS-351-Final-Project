@@ -38,15 +38,15 @@ CREATE TABLE `books` (
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `author`, `title`, `publisher`) VALUES
-(1, 'Miller', 'My Life', 'Penguin'),
-(2, 'Smith', 'Your Life', 'Lion'),
-(3, 'Jones', 'Their Life', 'Penguin'),
-(4, 'Young', 'Nobody\'s Life', 'Ostrich'),
-(5, 'Anderson', 'Their Lives', 'Ostrich'),
-(6, 'Kettleman', 'Everybody\'s Life', 'Penguin'),
-(7, 'Charleston', 'My Lives', 'Penguin'),
-(8, 'Darby', 'Nobody\'s Lives', 'Otter');
+INSERT INTO `books` (`id`, `author`, `title`, `publisher`, 'published', 'genre') VALUES
+(1, 'Miller', 'My Life', 'Penguin', '2024-02-24', 'Horror'),
+(2, 'Smith', 'Your Life', 'Lion', '2008-08-08', 'Adventure'),
+(3, 'Jones', 'Their Life', 'Penguin', '2019-03-17', 'Horror'),
+(4, 'Young', 'Nobody\'s Life', 'Ostrich', '1956-12-04', 'Comedy'),
+(5, 'Anderson', 'Their Lives', 'Ostrich', '2011-09-15', 'Romance'),
+(6, 'Kettleman', 'Everybody\'s Life', 'Penguin', '2012-06-14', 'Adventure'),
+(7, 'Charleston', 'My Lives', 'Penguin, '2012-05-18', 'Romance''),
+(8, 'Darby', 'Nobody\'s Lives', 'Otter', '1999-11-23', 'Horror');
 
 -- --------------------------------------------------------
 
