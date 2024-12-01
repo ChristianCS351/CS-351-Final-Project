@@ -244,23 +244,26 @@ h2 {
     background-position: center center; /* Center the image */
     background-size: cover; /* Ensure the image covers the entire section */
     background-color: black;
+    border-spacing: 10px;
+    padding: 70px;
 }
 
 blockquote {
     color:white; font-family: Cavolini;
-    font-size: 30px;
+    font-size: 27px;
 }
 
 figcaption { 
     color:aquamarine; 
     font-family: Harrington;
-    font-size: 30px;
+    font-size: 27px;
 }
 
 h3 {
     padding: 100px;
     margin: 10px;
     line-height: 2;
+    text-align: center;
 }
 
 td {
@@ -277,7 +280,7 @@ a {
     width: 160px; 
     height: 160px; 
     border-radius: 50%; 
-    border: 8px groove #3b83ff; 
+    border: 8px groove #7bf6ff; 
     object-fit: cover; 
     text-align: center;
     justify-content: center; 
