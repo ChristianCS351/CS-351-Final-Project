@@ -287,3 +287,18 @@ a {
     align-items: center; 
     box-shadow: 0px 0px 50px rgba(81, 243, 255, 0.582);
 }
+
+.our_favorites {
+    background-color: #e2a855;
+    padding: 20px;
+    padding-left: 40px;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    color: #6c5f34;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px; /* rounded corners */
+    box-shadow: 0 4px 8px rgba(2, 2, 2, 0.1); /* subtle shadow */
+    width:  100%;
+    justify-content: space-between;
+}
