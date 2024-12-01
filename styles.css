@@ -247,20 +247,19 @@ h2 {
 }
 
 blockquote {
-    color:red; font-family: Cavolini;
-    font-size: 16px;
+    color:white; font-family: Cavolini;
+    font-size: 28px;
 }
 
 figcaption { 
     color:aquamarine; 
     font-family: Harrington;
-    font-size: 16px;
+    font-size: 28px;
 }
 
 h3 {
-    border: 2px solid white;
-    padding: 10px;
-    margin: 10px;
+    padding: 15px;
+    margin: 15px;
 }
 
 td {
