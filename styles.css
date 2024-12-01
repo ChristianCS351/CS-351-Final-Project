@@ -41,5 +41,53 @@ h1 {
     text-align: center;
 }
 
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    background-color: beige;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: rgb(235, 47, 47);
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    background-color: #160788;
+    border-radius: 8px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none; /* Initially hide nav items */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav.active ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        padding: 10px;
+        color: rgb(150, 39, 39);
+        cursor: pointer;
+    }
+}
 
 
