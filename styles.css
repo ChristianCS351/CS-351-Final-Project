@@ -233,3 +233,14 @@ h2 {
     background-color: rgb(216, 136, 107); /* This sets the background color */
     text-align: center;
 }
+
+
+.comment-section {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0px;
+    height: 80vh;
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Ensure the image covers the entire section */
+}
