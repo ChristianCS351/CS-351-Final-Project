@@ -240,7 +240,7 @@ h2 {
     overflow: hidden;
     width: 100%;
     padding: 0px;
-    height: 80vh;
+    height: 100%;
     background-position: center center; /* Center the image */
     background-size: cover; /* Ensure the image covers the entire section */
     background-color: black;
@@ -258,8 +258,9 @@ figcaption {
 }
 
 h3 {
-    padding: 15px;
-    margin: 15px;
+    padding: 100px;
+    margin: 10px;
+    line-height: 2;
 }
 
 td {
