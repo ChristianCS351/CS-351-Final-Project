@@ -116,14 +116,14 @@ nav .nav-table th a:hover {
 
 .hero {
     width: 100%;
-    padding: 100px;
+    padding: 0px;
     height: 100vh;
     background-position: center center; /* Center the image */
     background-size: cover; /* Ensure the image covers the entire section */
 }
 
 .hero-section {
-    width: 80%;
+    width: 100%;
     height: 60vh;
     position: relative;
     overflow: hidden;
@@ -139,7 +139,7 @@ nav .nav-table th a:hover {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    animation: slide-show 9s infinite;
+    animation: slide-show 12s infinite;
 }
 
 .hero-slide img {
@@ -156,7 +156,7 @@ nav .nav-table th a:hover {
     font-size: 2rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    animation: text-fade 9s infinite;
+    animation: text-fade 12s infinite;
 }
 
 .hero-slide:nth-child(1) {
@@ -210,4 +210,13 @@ nav .nav-table th a:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    word-spacing: 2px;
+
+
 }
