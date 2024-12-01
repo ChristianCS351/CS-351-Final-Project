@@ -213,10 +213,11 @@ nav .nav-table th a:hover {
 }
 
 h2 {
-    font-size: 1.9rem;
+    font-size: 3.9rem;
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    word-spacing: 2px;
+    word-spacing: 3px;
+    line-height: 1.5;
 
 
 }
