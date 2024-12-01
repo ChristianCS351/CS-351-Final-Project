@@ -40,19 +40,22 @@ h1 {
     text-align: center;
 }
 
-.nav tr {
+
+nav .nav-table {
     list-style-type: none;
     display: flex;
     gap: 30px;
     background-color: rgb(225, 255, 198);
-    text-align: left;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.nav tr th {
-    display: inline;
+nav .nav-table tr th {
+    padding: 10px;
 }
 
-.nav tr th a {
+nav .nav-table th a {
     text-decoration: none;
     color: rgb(95, 159, 242);
     font-size: 18px;
@@ -60,7 +63,7 @@ h1 {
     transition: background-color 0.4s ease;
 }
 
-.nav tr th a:hover {
+nav .nav-table th a:hover {
     background-color: #160788;
     border-radius: 8px;
 }
