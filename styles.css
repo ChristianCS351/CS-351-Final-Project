@@ -42,30 +42,28 @@ h1 {
 
 
 nav .nav-table {
-    list-style-type: none;
-    display: flex;
-    gap: 30px;
     background-color: rgb(225, 255, 198);
     text-align: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
 nav .nav-table tr th {
-    padding: 10px;
+    padding: 20px;
 }
 
 nav .nav-table th a {
-    text-decoration: none;
+    text-decoration: wavy;
     color: rgb(95, 159, 242);
     font-size: 18px;
     padding: 10px;
-    transition: background-color 0.4s ease;
+    transition: background-color 0.7s ease;
 }
 
 nav .nav-table th a:hover {
     background-color: #160788;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 
