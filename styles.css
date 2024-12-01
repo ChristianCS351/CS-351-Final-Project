@@ -16,10 +16,10 @@ header {
     background-color: #f19748;
     color: rgb(52, 225, 216);
     padding: 10px;
-    text-align: center;
+    text-align: left;
     font-family: Broadway;
     font-size: 1.9rem;
-    padding-left: 110px;
+    padding-left: 120px;
     
 }
 
@@ -42,28 +42,32 @@ h1 {
 
 
 nav .nav-table {
-    background-color: rgb(225, 255, 198);
     text-align: center;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    border-collapse: collapse;
 }
 
 nav .nav-table tr th {
-    padding: 20px;
+    padding: 30px;
+    background-color: rgb(225, 255, 198);
 }
 
 nav .nav-table th a {
-    text-decoration: wavy;
+    text-decoration: none;
     color: rgb(95, 159, 242);
     font-size: 18px;
-    padding: 10px;
-    transition: background-color 0.7s ease;
+    padding: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+nav .nav-table th:hover {
+    background-color: orange;
 }
 
 nav .nav-table th a:hover {
-    background-color: #160788;
-    border-radius: 10px;
-    padding: 20px;
+    color: blue;
 }
 
 
