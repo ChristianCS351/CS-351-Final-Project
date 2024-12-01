@@ -19,7 +19,6 @@ header {
     text-align: center;
     font-family: Broadway;
     font-size: 1.9rem;
-    display: flex;
     padding-left: 110px;
     
 }
@@ -41,7 +40,7 @@ h1 {
     text-align: center;
 }
 
-.nav ul {
+.nav tr {
     list-style-type: none;
     display: flex;
     gap: 30px;
@@ -49,11 +48,11 @@ h1 {
     text-align: left;
 }
 
-.nav ul li {
+.nav tr th {
     display: inline;
 }
 
-.nav ul li a {
+.nav tr th a {
     text-decoration: none;
     color: rgb(95, 159, 242);
     font-size: 18px;
@@ -61,7 +60,7 @@ h1 {
     transition: background-color 0.4s ease;
 }
 
-.nav ul li a:hover {
+.nav tr th a:hover {
     background-color: #160788;
     border-radius: 8px;
 }
