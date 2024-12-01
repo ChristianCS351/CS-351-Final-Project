@@ -243,4 +243,32 @@ h2 {
     height: 80vh;
     background-position: center center; /* Center the image */
     background-size: cover; /* Ensure the image covers the entire section */
+    background-color: black;
+}
+
+blockquote {
+    color:red; font-family: Cavolini;
+    font-size: 16px;
+}
+
+figcaption { 
+    color:aquamarine; 
+    font-family: Harrington;
+    font-size: 16px;
+}
+
+h3 {
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
+}
+
+td {
+    width: -100px;
+
+}
+
+a {
+    color:goldenrod;
+    font-family: cooper;
 }
