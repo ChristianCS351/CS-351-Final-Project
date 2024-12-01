@@ -92,5 +92,24 @@ nav .nav-table th a:hover {
     color: rgb(241, 132, 85);
 }
 
+.image-x {
+    height: 100px;
+    width: 100px;
+    float: right;
+    padding: 10px;
+}
 
+.image-f {
+    height: 100px;
+    width: 100px;
+    float: right;
+    padding: 10px;
+}
+
+.image-i {
+    height: 100px;
+    width: 100px;
+    float: right;
+    padding: 10px;
+}
 
