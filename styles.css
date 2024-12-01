@@ -39,14 +39,28 @@ h1 {
 }
 
 
-h1 span {
+h1 span a {
     font-size: 1.6rem;
     font-weight: bold;
-    color: aqua;
-    background-color: azure;
-    padding: 5px 10px
-
+    color: rgb(255, 238, 0);
+    background-color: rgb(255, 91, 91);
+    padding: 15px 10px;
+    border-radius: 8px; 
+    box-shadow: 15px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.5); 
+    transform: translateY(-2px); 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    font-family: lobster, cursive;
 }
+
+
+h1 span:hover a {
+    transform: translateY(-5px); 
+    box-shadow: 20px 10px 20px rgba(50, 92, 101, 0.664), -5px -5px 20px rgba(255, 255, 255, 0.6); 
+    color: rgb(255, 246, 169);
+    background-color: rgb(173, 83, 83);
+}
+
+
 
 
 nav .nav-table {
