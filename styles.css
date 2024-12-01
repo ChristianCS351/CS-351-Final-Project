@@ -114,6 +114,14 @@ nav .nav-table th a:hover {
 }
 
 
+.hero {
+    width: 100%;
+    padding: 100px;
+    height: 100vh;
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Ensure the image covers the entire section */
+}
+
 .hero-section {
     width: 80%;
     height: 60vh;
