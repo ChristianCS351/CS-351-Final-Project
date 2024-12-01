@@ -248,13 +248,13 @@ h2 {
 
 blockquote {
     color:white; font-family: Cavolini;
-    font-size: 28px;
+    font-size: 30px;
 }
 
 figcaption { 
     color:aquamarine; 
     font-family: Harrington;
-    font-size: 28px;
+    font-size: 30px;
 }
 
 h3 {
@@ -271,4 +271,16 @@ td {
 a {
     color:goldenrod;
     font-family: cooper;
+}
+
+.circle-image img {
+    width: 160px; 
+    height: 160px; 
+    border-radius: 50%; 
+    border: 8px groove #3b83ff; 
+    object-fit: cover; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 0px 50px rgba(81, 243, 255, 0.582);
 }
