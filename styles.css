@@ -343,7 +343,7 @@ hr {
 
 .card {
     background-color: rgb(138, 253, 255);
-    border: 4px solid #3b21ff;
+    border: 6px groove #3b21ff;
     border-radius: 10px;
     box-shadow: 0 12px 12px rgb(46, 112, 255);
     width: calc(33.333% - 20px); /* Adjusts width to fit 3 cards in one row, accounting for margin */
@@ -371,7 +371,7 @@ hr {
 
 .card2 {
     background-color: rgb(138, 253, 255);
-    border: 4px solid #3b21ff;
+    border: 6px groove #3b21ff;
     border-radius: 10px;
     box-shadow: 0 12px 12px rgb(46, 112, 255);
     width: calc(33.333% - 20px); /* Adjusts width to fit 3 cards in one row, accounting for margin */
@@ -394,4 +394,17 @@ hr {
     font-family: 'Castellar';
     color: #c1cf08;
     text-align: right;
+}
+
+.card:hover, .card2:hover {
+    background-color: #4a5d9c; 
+    color: rgb(47, 83, 117); 
+    box-shadow: 0 12px 12px rgb(164, 119, 207);; 
+    border: 6px groove #a514ff;
+
+}
+
+/* Change the text color inside the card when hovering */
+.card:hover h3, .card2:hover h3 {
+    color: rgb(255, 202, 138); /* Change text color inside h3 on hover */
 }
