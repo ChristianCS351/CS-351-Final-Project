@@ -348,22 +348,23 @@ hr {
     box-shadow: 0 6px 6px rgb(91, 143, 255);
     width: calc(33.333% - 20px); /* Adjusts width to fit 3 cards in one row, accounting for margin */
     margin: 10px; /* Consistent spacing around cards */
-    padding: 20px;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .card img {
-    width: 100%;
+    width: 375px;
+    height: 375px;
     border-radius: 8px;
-    height: auto;
 }
 
 .card h3 {
     margin: 10px 0;
     font-size: 29px;
     font-family: 'Castellar';
-    color: #eeff00;
+    color: #c1cf08;
+    text-align: right;
 }
 
 .card p {
