@@ -416,7 +416,7 @@ hr {
 
 
 footer {
-    background-color: rgb(212, 167, 109);
+    background-color: rgb(255, 255, 255);
     color: black;
     font-style: normal;
     padding: 6px 0;
@@ -443,5 +443,17 @@ footer {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
     margin-left: 100px;
-    color: rgb(98, 76, 49);
+    color: rgb(255, 167, 60);
+    letter-spacing: 50px;
+}
+
+ h4 {
+    bottom: 190px;
+    right: 190px;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-left: 170px;
+    color: rgb(255, 216, 169);
+    letter-spacing: 3px;
 }
