@@ -413,3 +413,24 @@ hr {
     display: block;
 
 }
+
+
+footer {
+    background-color: rgb(212, 167, 109);
+    color: black;
+    font-style: normal;
+    padding: 6px 0;
+    width: 100%;
+    bottom: 0;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.footer-bottom {
+    bottom: 190px;
+    right: 190px;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-left: 100px;
+}
