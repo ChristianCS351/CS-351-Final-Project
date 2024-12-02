@@ -433,4 +433,15 @@ footer {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
     margin-left: 100px;
+    color: rgb(98, 76, 49);
+}
+
+.footer-nav {
+    bottom: 190px;
+    right: 190px;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-left: 100px;
+    color: rgb(98, 76, 49);
 }
