@@ -34,7 +34,7 @@ h2 {
 
 h1 {
     font-size: 2.5rem;
-    color: rgb(230, 113, 29) ;
+    color: rgb(230, 66, 29) ;
     text-align: center;
     font-family: 'Fredericka the Great', cursive;
     font-weight: bold;
@@ -295,7 +295,7 @@ a {
 }
 
 .iframe_section {
-    background-color: #a4eb86;
+    background-color: #f19748;
     padding: 20px;
     padding-left: 40px;
     font-family: sans-serif;
@@ -307,4 +307,12 @@ a {
     box-shadow: 0 4px 8px rgba(2, 2, 2, 0.1); /* subtle shadow */
     width:  100%;
     justify-content: space-between;
+    height: 80vh;
+}
+
+hr {
+    border-color: rgb(255, 251, 245);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgb(234, 100, 100);
+    border-width: 10px;
 }
