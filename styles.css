@@ -34,14 +34,15 @@ h2 {
 
 h1 {
     font-size: 2.5rem;
-    color: rgb(230, 66, 29) ;
+    color: rgb(251, 54, 10) ;
     text-align: center;
     font-family: 'Fredericka the Great', cursive;
     font-weight: bold;
     padding: 10px;
     margin: 10px;
     word-spacing: 3px;
-    font-size: 35px;
+    font-size: 45px;
+    font-style: italic;
 }
 
 
@@ -297,12 +298,10 @@ a {
 .iframe_section {
     background-color: #f19748;
     padding: 20px;
-    padding-left: 40px;
     font-family: sans-serif;
     margin-bottom: 20px;
     color: #02bbc5;
     word-spacing: 3px;
-    margin-left: 20px;
     border-radius: 10px; /* rounded corners */
     box-shadow: 0 4px 8px rgba(2, 2, 2, 0.1); /* subtle shadow */
     width:  100%;
@@ -311,8 +310,8 @@ a {
 }
 
 hr {
-    border-color: rgb(255, 251, 245);
+    border-color: rgb(171, 155, 140);
     border-radius: 3px;
     box-shadow: 0 2px 8px rgb(234, 100, 100);
-    border-width: 10px;
+    border-width: 6px;
 }
