@@ -408,3 +408,8 @@ hr {
 .card:hover h3, .card2:hover h3 {
     color: rgb(255, 202, 138); /* Change text color inside h3 on hover */
 }
+
+.card a, .card2 a {
+    display: block;
+
+}
