@@ -142,7 +142,7 @@ nav .nav-table th a:hover {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    animation: slide-show 12s infinite;
+    animation: slide-show 24s infinite;
 }
 
 .hero-slide img {
@@ -169,15 +169,15 @@ nav .nav-table th a:hover {
 
 
 .hero-slide:nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: 24s;
 }
 
 .hero-slide:nth-child(2) {
-    animation-delay: 3s;
+    animation-delay: 24s;
 }
 
 .hero-slide:nth-child(3) {
-    animation-delay: 6s;
+    animation-delay: 24s;
 }
 
 @keyframes slide-show {
