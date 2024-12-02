@@ -416,24 +416,14 @@ hr {
 
 
 footer {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(217, 184, 138);
     color: black;
     font-style: normal;
     padding: 6px 0;
     width: 100%;
     bottom: 0;
     justify-content: space-between;
-    height: 200px;
-}
-
-.footer-bottom {
-    bottom: 190px;
-    right: 190px;
-    font-size: 15px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: left;
-    margin-left: 100px;
-    color: rgb(98, 76, 49);
+    height: 260px;
 }
 
 .footer-nav {
@@ -445,15 +435,31 @@ footer {
     margin-left: 100px;
     color: rgb(255, 167, 60);
     letter-spacing: 50px;
-}
+} 
 
- h4 {
+.footer-bottom {
     bottom: 190px;
     right: 190px;
     font-size: 15px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
+    margin-left: 1px;
+    color: rgb(98, 76, 49);
+    font-weight: bold;
+}
+
+ h4 {
+    bottom: 190px;
+    right: 190px;
+    font-size: 23px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
     margin-left: 170px;
-    color: rgb(255, 216, 169);
-    letter-spacing: 3px;
+    color: rgb(98, 76, 49);
+    letter-spacing: 4px;
+    font-style: normal;
+}
+
+.footer-nav a h4:hover{
+    color: #c1cf08;
 }
