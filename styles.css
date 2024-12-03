@@ -241,6 +241,21 @@ h2 {
     text-align: center;
 }
 
+.box2 {
+    padding: 9px;
+    border: 3px transparent rgb(177, 67, 194);
+    display: inline-block;
+    color: #35a660c4;
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+    background-color: rgb(230, 197, 246); /* This sets the background color */
+    text-align: center;
+    margin-left: 180px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 18px 18px rgba(203, 183, 158, 0.808);
+}
+
+
 
 .comment-section {
     position: relative;
