@@ -476,5 +476,7 @@ footer {
 
 
 address{
-    color: #4a5d9c;
+    color: rgb(46, 93, 51);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
