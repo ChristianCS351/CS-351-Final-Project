@@ -503,8 +503,22 @@ h5 {
     justify-content: space-between;
 }
 
+.html-about {
+    background-color: rgb(79, 142, 230);
+    padding: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px black;
+    width: 100%;
+    justify-content: space-between;
+}
+
 label {
-    color: rgb(240, 144, 81);
+    color: rgb(126, 253, 211);
     word-spacing: 4px;
     font-family: monospace;
     font-size: 1.4rem;
