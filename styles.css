@@ -649,3 +649,39 @@ button:hover {
     border: 6px dashed rgba(197, 168, 104, 0.613);
     font-family: Broadway;
 }
+
+
+labels {
+    color: rgb(255, 145, 0);
+    word-spacing: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 2.5;
+    text-align: left;
+}
+
+option {
+    color: rgb(76, 109, 33);
+    word-spacing: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 2.5;
+    font-weight: bold;
+    background-color: rgb(191, 255, 255);
+
+}
+
+
+value {
+    color: rgb(76, 109, 33);
+    word-spacing: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 2.5;
+    font-weight: bold;
+    background-color: rgb(191, 255, 255);
+
+}
