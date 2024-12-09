@@ -547,16 +547,6 @@ input {
 
 }
 
-labels {
-    color: rgb(73, 230, 86);
-    word-spacing: 3px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold;
-    line-height: 2.5;
-
-}
-
 option {
     color: rgb(76, 109, 33);
     word-spacing: 3px;
@@ -656,6 +646,7 @@ labels {
     font-weight: bold;
     line-height: 2.0;
     text-align: left;
+    margin-left: 15px;
 }
 
 option {
@@ -669,3 +660,21 @@ option {
     background-color: rgb(191, 255, 255);
 
 }
+
+input[type="radio"] {
+    background-color: #b3c90f;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+  }
+
+  /* When radio button is checked */
+  input[type="radio"]:checked {
+    background-color: #4CAF50; /* Green when selected */
+    border-color: #388E3C;
+  }
+
+  /* Hover effect */
+  input[type="radio"]:hover {
+    border-color: #388E3C;
+  }
