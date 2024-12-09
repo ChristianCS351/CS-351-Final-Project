@@ -633,9 +633,9 @@ button:hover {
     margin-top: 25px;
 }
 
-start-experience:hover {
-    background-color: #4a5d9c;
-    color: #f2bb83;
+.start-experience:hover {
+    background-color: #82e391;
+    color: #f6e147;
 }
 
 .starting-page {
@@ -646,7 +646,7 @@ start-experience:hover {
     max-width: 800px;
     margin: 40px auto;
     text-align: center;
-    border: 6px dashed rgba(255, 174, 0, 0.613);
+    border: 6px dashed rgba(197, 168, 104, 0.613);
     font-family: Broadway;
 
 
