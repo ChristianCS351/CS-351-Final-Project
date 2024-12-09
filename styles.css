@@ -502,3 +502,118 @@ h5 {
     width: 100%;
     justify-content: space-between;
 }
+
+label {
+    color: rgb(240, 144, 81);
+    word-spacing: 4px;
+    font-family: monospace;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+input {
+    color: rgb(255, 72, 0);
+    word-spacing: 6px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgb(191, 255, 255);
+    border-color: #a38a49;
+}
+
+::placeholder {
+
+    color: rgb(255, 72, 0);
+    word-spacing: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+}
+
+
+
+h3 {
+    font-size: 1rem;
+    font-weight: 200;
+    text-align: center;
+    font-family: lucida calligraphy;
+    color: rgb(255, 232, 182);
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(74, 94, 25);
+    font-weight: bold;
+}
+
+
+p {
+    font-family:'Times New Roman', Times, serif;
+    word-spacing: 4px;
+    color: rgb(5, 202, 107);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+labels {
+    color: rgb(77, 240, 91);
+    word-spacing: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 2.5;
+
+}
+
+option {
+    color: rgb(76, 109, 33);
+    word-spacing: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 2.5;
+    font-weight: bold;
+    background-color: rgb(191, 255, 255);
+
+}
+
+
+value {
+    color: rgb(76, 109, 33);
+    word-spacing: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 2.5;
+    font-weight: bold;
+    background-color: rgb(191, 255, 255);
+
+}
+
+
+textarea {
+
+    color: rgb(255, 72, 0);
+    word-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+}
+
+button {
+
+    color: rgb(9, 45, 248);
+    word-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 20px;
+    background-color: orangered;
+
+}

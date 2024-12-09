@@ -60,7 +60,98 @@
     <h5 style="color: brown; font-size: 21px; font-family: Arial, Helvetica, sans-serif;">"Have something nice to say about us? If you do, please don't hesitate to send us
         a message as we love to read them."</h5>
     <br><hr style=" border-radius: 2px; border: 2px solid rgb(255, 246, 164);"><br><br>
-    section class
+    
+    <form action="landing10.html" method="GET" id="demoForm">
+        <label for="name">First Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your first name." required>
+        <br><br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="name" name="lname" placeholder="Enter your last name." required>
+        <br><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br><br><br>
+
+        <label for="age">Current Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120" required>
+        <br><br><br>
+
+        <label for="rating">Rate Experience (5 Highest, 1 Lowest):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required>
+        <br><br><br>
+
+        <label for="firstExperience">Was This Your First Time Here (1 yes, 2 no):</label>
+        <input type="number" id="firstExperience" name="firstExperience" min="1" max="2" required>
+        <br><br><br><br><hr>
+        <br>
+        <h4>Radio Buttons/ Check All That Apply:</h4><br><br>
+
+        <p>What Is Your Gender:</p><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <labels for="male">Male</labels><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <labels for="female">Female</labels><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <labels for="other">Other</labels><br><br><br>
+
+        <p>What Did You Like The Most During Your Paradise Experience:</p><br>
+        <input type="radio" id="Scenery" name="mostLiked" value="Scenery">
+        <labels for="Scenery">The Scenery</labels><br>
+        <input type="radio" id="Staff" name="mostLiked" value="Staff">
+        <labels for="Staff">The Staff</labels><br>
+        <input type="radio" id="Food" name="mostLiked" value="Food">
+        <labels for="Food">The Food</labels><br>
+        <input type="radio" id="Band" name="mostLiked" value="Band">
+        <labels for="Band">Live Band</labels><br>
+        <input type="radio" id="Nothing" name="mostLiked" value="Nothing">
+        <labels for="Nothing">Nothing</labels><br><br><br>
+
+        <p>What Did You Like The Least During Your Paradise Experience:</p><br>
+        <input type="radio" id="Scenery" name="leastLiked" value="Scenery">
+        <labels for="Scenery">The Scenery</labels><br>
+        <input type="radio" id="Staff" name="leastLiked" value="Staff">
+        <labels for="Staff">The Staff</labels><br>
+        <input type="radio" id="Food" name="leastLiked" value="Food">
+        <labels for="Food">The Food</labels><br>
+        <input type="radio" id="Band" name="leastLiked" value="Band">
+        <labels for="Band">Live Band</labels><br>
+        <input type="radio" id="Nothing" name="leastLiked" value="Nothing">
+        <labels for="Nothing">Nothing</labels><br><br><br>
+
+        <p>Your Favorite Musical Genres (Select all the Apply):</p>
+        <input type="checkbox" id="Grupera" name="interests" value="Grupera">
+        <labels for="Grupera">Grupera</labels><br>
+        <input type="checkbox" id="Classical" name="interests" value="Classical">
+        <labels for="Classical">Classical</labels><br>
+        <input type="checkbox" id="Son" name="interests" value="Son">
+        <labels for="Son">Son</labels><br>
+        <input type="checkbox" id="Pop" name="interests" value="Pop">
+        <labels for="Son">Pop</labels>
+        <br><br><br><br><hr>
+        <br>
+        <h4>Dropdown Boxes and Comment Section:</h4><br><br>
+
+        <label for="opinion">Would you Recommmend Us To a Friends or Family:</label>
+        <select id="opinion" name="opinion">
+            <option value="Absolutely yes">Absolutely Yes</option>
+            <option value="Yes">Yes</option>
+            <option value="Maybe">Maybe</option>
+            <option value="No">No</option>
+            <option value="Absolutely No">Absolutely No</option>
+            <option value="No Opinion">No Opinion</option>
+        </select><br><br><br>
+
+        <label for="comments">Please Add Anything You Wish to Say About Us:</label><br>
+        <textarea id="comments" name="comments" rows="6" cols="50" placeholder="Enter anything you want to say"></textarea>
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <br><br>
+        <button type="reset">Reset</button>
+        <br><br>
+    </form>
     
 
     <br><br>
