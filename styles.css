@@ -622,9 +622,9 @@ button:hover {
 }
 
 
-start-experience {
+.start-experience {
     display: inline-block;
-    background-color: #f19748;
+    background-color: #ff8d29;
     color: #02bbc5;
     padding: 10px 20px;
     border: 2px solid;
@@ -636,4 +636,20 @@ start-experience {
 start-experience:hover {
     background-color: #4a5d9c;
     color: #f2bb83;
+}
+
+.starting-page {
+    background-color: #ffc163;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgb(252, 186, 86);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    border: 6px dashed rgba(255, 174, 0, 0.613);
+    font-family: Broadway;
+
+
+
+
 }
