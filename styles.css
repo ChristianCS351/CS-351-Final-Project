@@ -488,3 +488,17 @@ h5 {
     font-family: 'Felix Titling';
     color: rgb(222, 118, 100);
 }
+
+.about-slide {
+    background-color: brown;
+    padding: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px black;
+    width: 100%;
+    justify-content: space-between;
+}
