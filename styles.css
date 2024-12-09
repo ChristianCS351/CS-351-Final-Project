@@ -542,7 +542,7 @@ input {
 
 ::placeholder {
 
-    color: rgb(49, 43, 222);
+    color: rgb(99, 94, 93);
     word-spacing: 4px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
@@ -564,7 +564,7 @@ option {
     color: rgb(76, 109, 33);
     word-spacing: 3px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.6rem;
+    font-size: 27px;
     font-weight: bold;
     line-height: 2.5;
     font-weight: bold;
@@ -588,22 +588,36 @@ value {
 
 textarea {
 
-    color: rgb(255, 72, 0);
-    word-spacing: 3px;
+    color: rgb(0, 0, 0);
+    word-spacing: 4px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 0.9rem;
+    font-size: 27px;
     font-weight: bold;
+    background-color: #f2bb83;
+    line-height: 1.5;
 
 }
 
 button {
 
-    color: rgb(9, 45, 248);
+    color: rgb(110, 100, 82);
     word-spacing: 3px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.9rem;
+    font-family: 'Britannic';
+    font-size: 30px;
     font-weight: bold;
-    padding: 20px;
-    background-color: orangered;
+    padding: 60px;
+    background-color: rgb(242, 213, 203);
+    border: 3px dashed orangered;
+    box-shadow: 0 1px 25px rgb(166, 8, 8);
 
+}
+
+button:hover {
+    background-color: rgb(109, 231, 213);
+    color: rgb(225, 255, 76);
+    box-shadow: 0 1px 25px rgb(59, 81, 248);
+    border: 3px dashed rgb(101, 96, 139);
+}
+
+button:hover {
 }
