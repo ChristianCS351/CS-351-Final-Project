@@ -595,6 +595,8 @@ textarea {
     font-weight: bold;
     background-color: #f2bb83;
     line-height: 1.5;
+    border: 3px groove;
+    border-color: #f26b42;
 
 }
 
