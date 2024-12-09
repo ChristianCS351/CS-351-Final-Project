@@ -480,3 +480,11 @@ address{
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+h5 {
+    font-size: 38px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Felix Titling';
+    color: rgb(222, 118, 100);
+}
