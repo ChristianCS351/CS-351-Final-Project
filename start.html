@@ -16,23 +16,23 @@
     <hr style=" border-radius: 2px; border: 2px groove rgb(107, 255, 248);">
 
 <form action="landing.html" method="GET" id="demoForm" style="padding: 30px; margin-bottom: 75px;">
-    <label for="fname" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 1: Enter Your First and Last Name!<br></label>
+    <label for="fname" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 1: Enter Your First and Last Name?<br></label>
     <input type="text" id="name" name="fname" placeholder="Enter your Full Name:" required>
     <br><br><br><br>
 
-    <label for="email" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 2: Enter Your Current Email!<br></label>
+    <label for="email" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 2: Enter Your Current Email?<br></label>
     <input type="email" id="email" name="email" placeholder="Enter your Email:" required>
     <br><br><br><br>
 
-    <label for="age" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 3: How Old Are You!<br></label>
+    <label for="age" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 3: How Old Are You?<br></label>
     <input type="number" id="age" name="age" min="1" max="115" required style="width: 250px; text-align: center;">
     <br><br><br><br>
 
-    <label for="firstExperience" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 4: Is This Your First Time Filling Out This Form! (1 = yes, 2 = no):<br></label>
+    <label for="firstExperience" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 4: Is This Your First Time Filling Out This Form? (1 = yes, 2 = no):<br></label>
     <input type="number" id="firstExperience" name="firstExperience" min="1" max="2" required style="width: 250px; text-align: center;">
     <br><br><br><br>
 
-    <label for="locatioN" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 5: Which Location Are You Filling This Form Out For!<br></label>
+    <label for="locatioN" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 5: Which Location Are You Filling This Form Out For?<br></label>
     <input type="radio" id="wai" name="locatioN" value="wai">
     <labels for="wai">Waikiki Beach, HI</labels><br>
     <input type="radio" id="key" name="locatioN" value="key">
@@ -43,22 +43,20 @@
     <labels for="marco">Marco Island, FL</labels>
     <br><br><br><br>
 
-    <p>What Did You Like The Most During Your Paradise Experience:</p><br>
-    <input type="radio" id="Scenery" name="mostLiked" value="Scenery">
-    <labels for="Scenery">The Scenery</labels><br>
-    <input type="radio" id="Staff" name="mostLiked" value="Staff">
+    <label for="best" style="color: rgb(183, 248, 126); font-weight: bold; line-height: 2.0;">Question 6: What Did You Appreciate The <b style="color: rgb(11, 208, 252);"><u>Most</b></u> About Your Paradise Experience?<br></label>
+    <input type="radio" id="Scenery" name="best" value="Scenery">
+    <labels for="Scenery">The Scenery/View</labels><br>
+    <input type="radio" id="Staff" name="best" value="Staff">
     <labels for="Staff">The Staff</labels><br>
-    <input type="radio" id="Food" name="mostLiked" value="Food">
-    <labels for="Food">The Food</labels><br>
-    <input type="radio" id="Band" name="mostLiked" value="Band">
-    <labels for="Band">Live Band</labels><br>
-    <input type="radio" id="Nothing" name="mostLiked" value="Nothing">
-    <labels for="Nothing">Nothing</labels><br><br><br>
+    <input type="radio" id="food" name="best" value="food">
+    <labels for="food">Food</labels><br>
+    <input type="radio" id="lb" name="best" value="lb">
+    <labels for="lb">Live Band</labels><br>
+    <input type="radio" id="Nop" name="best" value="Nop">
+    <labels for="Nop">No Preference</labels>
+    <br><br><br><br>
 
-    <label for="rating">Rate Experience (5 Highest, 1 Lowest):</label>
-    <input type="number" id="rating" name="rating" min="1" max="5" required>
-    <br><br><br>
-
+    
     <p>What Did You Like The Least During Your Paradise Experience:</p><br>
     <input type="radio" id="Scenery" name="leastLiked" value="Scenery">
     <labels for="Scenery">The Scenery</labels><br>
