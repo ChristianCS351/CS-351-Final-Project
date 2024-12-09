@@ -650,10 +650,10 @@ labels {
 }
 
 option {
-    color: rgb(99, 228, 245);
+    color: rgb(23, 126, 139);
     word-spacing: 3px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     line-height: 2.5;
     font-weight: bold;
@@ -675,3 +675,41 @@ input[type="radio"] {
     height: 15px;
     margin-left: 10px;
   }
+
+select {
+    color: rgb(23, 126, 139);
+    word-spacing: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 5.5;
+    width: 182px;
+    font-weight: bold;
+    background-color: rgb(108, 251, 172);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #3498db; /* Blue track */
+    height: 9px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #1663fe; /* Mario red */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #42e73c; /* Mario red */
+    border-radius: 50%;
+    cursor: pointer;
+}
