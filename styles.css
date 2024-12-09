@@ -620,3 +620,20 @@ button:hover {
     box-shadow: 0 1px 25px rgb(59, 81, 248);
     border: 3px dashed rgb(101, 96, 139);
 }
+
+
+start-experience {
+    display: inline-block;
+    background-color: #f19748;
+    color: #02bbc5;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    text-decoration: dashed;
+    margin-top: 25px;
+}
+
+start-experience:hover {
+    background-color: #4a5d9c;
+    color: #f2bb83;
+}
