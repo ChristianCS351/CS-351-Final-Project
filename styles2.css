@@ -650,14 +650,14 @@ labels {
 }
 
 option {
-    color: rgb(76, 109, 33);
+    color: rgb(99, 228, 245);
     word-spacing: 3px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.6rem;
+    font-size: 20px;
     font-weight: bold;
     line-height: 2.5;
     font-weight: bold;
-    background-color: rgb(191, 255, 255);
+    background-color: rgb(108, 251, 172);
 
 }
 
@@ -668,13 +668,10 @@ input[type="radio"] {
     margin-left: 10px;
   }
 
-  /* When radio button is checked */
-  input[type="radio"]:checked {
-    background-color: #4CAF50; /* Green when selected */
-    border-color: #388E3C;
-  }
 
-  /* Hover effect */
-  input[type="radio"]:hover {
-    border-color: #388E3C;
+  input[type="checkbox"] {
+    background-color: #b3c90f;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
   }
