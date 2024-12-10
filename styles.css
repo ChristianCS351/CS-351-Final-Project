@@ -559,6 +559,87 @@ h5 {
     margin: 20px; 
 }
 
+.set-2 {
+    background-color: rgb(90, 255, 72);
+    padding: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgb(51, 105, 49);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.set-2 img{
+    background-color: rgb(51, 129, 70);
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgb(86, 201, 14);
+    border: 4px groove #57ff1a; 
+    object-fit: cover; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 8px 10px 50px rgba(2, 64, 29, 0.921);
+    margin: 20px; 
+}
+
+.set-3 {
+    background-color: rgb(193, 69, 50);
+    padding: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgb(201, 36, 14);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.set-3 img{
+    background-color: rgb(211, 97, 97);
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgb(113, 8, 8);
+    border: 4px groove #ff1a1a; 
+    object-fit: cover; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 8px 10px 50px rgba(105, 11, 11, 0.921);
+    margin: 20px; 
+}
+
+.set-4 {
+    background-color: rgb(72, 81, 255);
+    padding: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgb(14, 61, 201);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.set-4 img{
+    background-color: #91abff;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgb(7, 5, 66);
+    border: 4px groove #351aff; 
+    object-fit: cover; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 8px 10px 50px rgba(20, 0, 92, 0.921);
+    margin: 20px; 
+}
+
 .html-about {
     background-color: rgb(79, 142, 230);
     padding: 40px;
