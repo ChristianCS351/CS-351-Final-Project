@@ -310,6 +310,34 @@ a {
     box-shadow: 0px 0px 50px rgba(81, 243, 255, 0.582);
 }
 
+.circle-purple-image img {
+    width: 160px; 
+    height: 160px; 
+    border-radius: 50%; 
+    border: 6px groove #c786ff; 
+    object-fit: cover; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 0px 50px rgba(131, 29, 225, 0.774);
+    background-color: rgba(10, 6, 1, 0.11);
+}
+
+
+.circle-purple-image img:hover {
+    width: 160px; 
+    height: 160px; 
+    border-radius: 50%; 
+    border: 6px groove #e7ccff; 
+    object-fit: cover; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0px 0px 50px rgba(131, 29, 225, 0.774);
+    box-shadow: 0px 0px 20px rgba(255, 248, 248, 0.5);
+    background-color: rgba(10, 6, 1, 0.11);
+}
+
 .iframe_section {
     background-color: #f19748;
     padding: 20px;
