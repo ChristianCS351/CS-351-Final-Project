@@ -823,3 +823,17 @@ option {
     font-family: Broadway;
     height: 500px;
 }
+
+.news-section {
+    background-color: rgb(161, 134, 121);
+    padding-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 2px 22px rgb(201, 132, 14);
+    width: 100%;
+    justify-content: space-between;
+}
