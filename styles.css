@@ -498,11 +498,6 @@ footer {
     font-style: normal;
 }
 
-.footer-nav a h4:hover{
-    color: #c1cf08;
-}
-
-
 address{
     color: rgb(46, 93, 51);
     font-size: 20px;
