@@ -490,7 +490,7 @@ h5 {
 }
 
 .about-slide {
-    background-color: brown;
+    background-color: rgb(165, 81, 42);
     padding: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding-left: 40px;
@@ -498,7 +498,7 @@ h5 {
     word-spacing: 3px;
     margin-left: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px black;
+    box-shadow: 0 8px 12px rgb(201, 132, 14);
     width: 100%;
     justify-content: space-between;
 }
@@ -671,4 +671,18 @@ option {
     font-weight: bold;
     background-color: rgb(191, 255, 255);
 
+}
+
+
+.closing-page {
+    background-color: #173dfc;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgb(15, 148, 137);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    border: 6px dashed rgba(77, 125, 184, 0.613);
+    font-family: Broadway;
+    height: 500px;
 }
