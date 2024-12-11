@@ -1044,3 +1044,27 @@ option {
     font-family: Broadway;
     width: 100%;
 }
+
+.error {
+    font-family: 'Arial', sans-serif; 
+    font-size: 24px;                 
+    color: #ffcb3b;                  
+    text-align: center;             
+    font-weight: bold;                
+    padding: 10px;                   
+    border: 2px solid #f1612d;        
+    border-radius: 5px;             
+    background-color: #ff1919;      
+}
+
+.register-page {
+    background-color:  #ffdeb0;
+    border-radius: 8px;
+    box-shadow: 3px 3px 12px rgb(119, 248, 255);
+    max-width: 100%;
+    margin: 20px;
+    text-align: center;
+    border: 6px solid rgba(197, 168, 104, 0.613);
+    font-family: Broadway;
+    width: 100%;
+}

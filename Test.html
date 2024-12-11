@@ -1,3 +1,33 @@
+<?php
+// register.php - Registration page
+session_start();
+require_once 'config.php';
+require_once 'auth.php';
+
+$error_message = '';
+$success_message = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['register'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+        
+        if ($password !== $confirm_password) {
+            $error_message = 'Your password does not seem to match.';
+        } else if (strlen($password) < 6) {
+            $error_message = 'Your password must be at least 8 characters.';
+        } else {
+            if (register_user($pdo, $username, $password)) {
+                $success_message = 'Your registration was successful! You can now login to begin unbanning books.';
+            } else {
+                $error_message = 'This username already exists.';
+            }
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,31 +37,64 @@
     <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body style="background-color: bisque;">
+<body>
     <div class="auth-container">
-        <div class="login-page">
-            <h2 style="color: rgb(220, 65, 57); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Login Page*</h1>
-                <br><br><hr style=" border-radius: 2px; border: 3px dotted rgb(145, 123, 104);"><br></br>
-            <main>
-               <?php if ($error_message): ?>
-                   <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
-               <?php endif; ?>
-
-               <form method="POST" action="" class="auth-form">
-                <div>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required style="width: 250px; text-align: center;">
-                </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required style="width: 30px; text-align: center;">
-                </div>
-                <button type="submit" name="login">Login</button>
-                </form>
-                <p>No paradise account just yet? <a href="register.php">Register Here to Begin Your Paradise!</a></p>
-            </main>
-        </div>
-    </div>
+        <h1>Register</h1>
+        <?php if ($error_message): ?>
+            <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
+        <?php endif; ?>
+        <?php if ($success_message): ?>
+            <div class="success"><?php echo htmlspecialchars($success_message); ?></div>
+        <?php endif; ?>
         
+        <form method="POST" action="" class="auth-form">
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required style="margin-left: 300px; width: 450px; text-align: center;">
+            </div>
+            <div>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required style="margin-left: 300px; width: 450px; text-align: center;">
+            </div>
+            <div>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required  style="margin-left: 300px; width: 450px; text-align: center;">
+            </div>
+            <button type="submit" name="register" style="margin-left: 300px;">Register</button>
+        </form>
+        <p>Already have an account with us? <a href="login.php">Please Login Here</a></p>
+    </div>
+
+    <body style="background-color:  #f19748;">
+        <div class="auth-container", style="width: 100%;">
+            <div class="register-page", style="width: 100%; background">
+                <h2 style="color: rgb(220, 65, 57); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Login Page*</h1>
+                    <br><br><hr style=" border-radius: 2px; border: 3px dotted rgb(145, 123, 104);"><br></br>
+                <main>
+                   <?php if ($error_message): ?>
+                       <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
+                   <?php endif; ?>
+    
+                   <form method="POST" action="" class="auth-form">
+                     <div>
+                          <label for="username">Username:</label><br>
+                          <input type="text" id="username" name="username" required style="margin-left: 300px; width: 450px; text-align: center;">
+                     </div>
+                     <div>
+                          <label for="password">Password:</label><br>
+                          <input type="password" id="password" name="password" required style="margin-left: 300px; width: 450px; text-align: center;">
+                    </div>
+                    <div>
+                          <label for="confirm_password">Confirm Password:</label><br>
+                          <input type="password" id="confirm_password" name="confirm_password" required  style="margin-left: 300px; width: 450px; text-align: center;">
+                    </div><br><br>
+                          <button type="submit" name="register" style="margin-left: 300px;">Register</button>
+                          <button type="submit" name="login" style="margin-left: 300px;">Login</button>
+                   </form><br><br><br>
+                    <p style="font-size: 23px; color: rgb(89, 168, 142); font-family: 'Cooper'
+                    ; word-spacing: 3px; font-weight: bold;">Already have a paradise account with us? | <a href="register.php",>Please Login Here Then!</a></p>
+                </main>
+            </div>
+        </div>
 </body>
 </html>
