@@ -14,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $confirm_password = $_POST['confirm_password'];
         
         if ($password !== $confirm_password) {
-            $error_message = 'Your password does not seem to match.';
-        } else if (strlen($password) < 6) {
-            $error_message = 'Your password must be at least 8 characters.';
+            $error_message = 'Your password does not seem to match, Try Again!!.';
+        } else if (strlen($password) < 8) {
+            $error_message = 'Your password for this paradise needs to be at least 9 characters.';
         } else {
             if (register_user($pdo, $username, $password)) {
-                $success_message = 'Your registration was successful! You can now login to begin unbanning books.';
+                $success_message = 'Your registration was successful! You can now login to our website.';
             } else {
                 $error_message = 'This username already exists.';
             }

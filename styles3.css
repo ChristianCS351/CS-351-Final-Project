@@ -1053,9 +1053,21 @@ option {
     text-align: center;             
     font-weight: bold;                
     padding: 10px;                   
-    border: 2px groobe #f1612d;        
+    border: 2px groove #f1612d;        
     border-radius: 5px;             
     background-color: #ff1919;      
+}
+
+.success {
+    font-family: 'Arial', sans-serif; 
+    font-size: 24px;                 
+    color: #f1ffda;                  
+    text-align: center;             
+    font-weight: bold;                
+    padding: 10px;                   
+    border: 2px groove #4b5aff;        
+    border-radius: 5px;             
+    background-color: #aeb5ff;     
 }
 
 .register-page {
@@ -1070,3 +1082,4 @@ option {
     font-family: Broadway;
     width: 100%;
 }
+
