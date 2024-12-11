@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: index.php');
             exit;
         } else {
-            $error_message = 'Invalid username or password';
+            $error_message = 'Sorry, your username or password is incorrect';
         }
     }
 }
@@ -25,10 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Christian's Book Unbanning Program tester - Login Page</title>
-    <link rel="stylesheet" href="stylesP3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - Taco Paraíso</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body style="background-color: bisque;">
     <div class="auth-container">
         <h1>Login</h1>
         <?php if ($error_message): ?>
@@ -46,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <button type="submit" name="login">Login</button>
         </form>
-        <p>Don't have an account just yet? <a href="register.php">Please Register Here, Today!</a></p>
+        <p>No paradise account just yet? <a href="register.php">Register Here to Begin Your Paradise!</a></p>
     </div>
 </body>
 </html>

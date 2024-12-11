@@ -32,8 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Christian's Book Unbanning Program - Register</title>
-    <link rel="stylesheet" href="stylesP3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - Taco Paraíso</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <div class="auth-container">
