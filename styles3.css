@@ -1038,7 +1038,8 @@ option {
     border-radius: 8px;
     box-shadow: 3px 3px 12px rgb(119, 248, 255);
     max-width: 100%;
-    margin: 20px;
+    margin-left: 450px;
+    margin-top: 100px;
     text-align: center;
     border: 6px solid rgba(197, 168, 104, 0.613);
     font-family: Broadway;
@@ -1058,13 +1059,14 @@ option {
 }
 
 .register-page {
-    background-color:  #ffdeb0;
+    background-color:  #eeff31;
     border-radius: 8px;
-    box-shadow: 3px 3px 12px rgb(119, 248, 255);
+    box-shadow: 3px 3px 12px rgb(179, 207, 133);
     max-width: 100%;
-    margin: 20px;
+    margin-left: 450px;
+    margin-top: 100px;
     text-align: center;
-    border: 6px solid rgba(197, 168, 104, 0.613);
+    border: 6px solid rgba(181, 184, 11, 0.801);
     font-family: Broadway;
     width: 100%;
 }
