@@ -33,36 +33,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page - Taco Paraíso</title>
+    <title>Registration Page - Taco Paraíso</title>
     <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-    <div class="auth-container">
-        <h1>Register</h1>
-        <?php if ($error_message): ?>
-            <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
-        <?php endif; ?>
-        <?php if ($success_message): ?>
-            <div class="success"><?php echo htmlspecialchars($success_message); ?></div>
-        <?php endif; ?>
-        
-        <form method="POST" action="" class="auth-form">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+    <body style="background-color:  #f19748;">
+        <div class="auth-container", style="width: 100%;">
+            <div class="register-page", style="width: 100%;">
+                <h2 style="color: rgb(65, 130, 74); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Registration Page*</h1>
+                    <br><br><hr style=" border-radius: 2px; border: 3px dotted rgb(145, 123, 104);"><br></br>
+                <main>
+                   <?php if ($error_message): ?>
+                       <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
+                   <?php endif; ?>
+                   <?php if ($success_message): ?>
+                       <div class="success"><?php echo htmlspecialchars($success_message); ?></div>
+                   <?php endif; ?>
+    
+                   <form method="POST" action="" class="auth-form">
+                     <div>
+                          <label for="username">Username:</label><br>
+                          <input type="text" id="username" name="username" required style="margin-left: 300px; width: 450px; text-align: center;">
+                     </div>
+                     <div>
+                          <label for="password">Password:</label><br>
+                          <input type="password" id="password" name="password" required style="margin-left: 300px; width: 450px; text-align: center;">
+                    </div>
+                    <div>
+                          <label for="confirm_password">Confirm Password:</label><br>
+                          <input type="password" id="confirm_password" name="confirm_password" required  style="margin-left: 300px; width: 450px; text-align: center;">
+                        </div><br><br>
+                        <form method="POST" action="" class="auth-form">
+                            <button type="submit" name="register" style="margin-left: 300px;">Register</button>
+                        </form><br><br><br>
+                    <p style="font-size: 23px; color: rgb(89, 168, 113); font-family: 'Cooper'
+                    ; word-spacing: 3px; font-weight: bold;">Already have a paradise account with us? | <a href="login.php",>Please Login Here Then!</a></p>
+                </main>
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div>
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            </div>
-            <button type="submit" name="register">Register</button>
-        </form>
-        <p>Already have an account with us? <a href="login.php">Please Login Here</a></p>
-    </div>
+        </div>
+    <br><br><br>
 </body>
 </html>

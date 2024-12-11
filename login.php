@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body style="background-color:  #f19748;">
+    <a style="margin-left: 100px;"><img src="Taco Paraiso Official Logo.png", alt="Official Logo of Taco Paraiso", style="height:406px; width:400px;"></a><br><br>
     <div class="auth-container", style="width: 100%;">
         <div class="login-page", style="width: 100%; background">
             <h2 style="color: rgb(220, 65, 57); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Login Page*</h1>
@@ -56,8 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </main>
         </div>
     </div>
-    <br><br>
-    <a style="margin-left: 400px;"><img src="Taco Paraiso Official Logo.png", alt="Official Logo of Taco Paraiso"></a>
-        
+    <br><br><br>
 </body>
 </html>

@@ -1036,7 +1036,7 @@ option {
 .login-page {
     background-color:  #ffdeb0;
     border-radius: 8px;
-    box-shadow: 3px 3px 12px rgb(119, 248, 255);
+    box-shadow: 0px 5px 22px rgb(119, 248, 255);
     max-width: 100%;
     margin-left: 450px;
     margin-top: 100px;
@@ -1053,7 +1053,7 @@ option {
     text-align: center;             
     font-weight: bold;                
     padding: 10px;                   
-    border: 2px solid #f1612d;        
+    border: 2px groobe #f1612d;        
     border-radius: 5px;             
     background-color: #ff1919;      
 }
@@ -1061,12 +1061,12 @@ option {
 .register-page {
     background-color:  #eeff31;
     border-radius: 8px;
-    box-shadow: 3px 3px 12px rgb(179, 207, 133);
+    box-shadow: 0px 5px 22px rgb(218, 255, 158);
     max-width: 100%;
     margin-left: 450px;
     margin-top: 100px;
     text-align: center;
-    border: 6px solid rgba(181, 184, 11, 0.801);
+    border: 6px groove rgba(181, 184, 11, 0.801);
     font-family: Broadway;
     width: 100%;
 }
