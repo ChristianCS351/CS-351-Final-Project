@@ -33,7 +33,7 @@ try {
 $search_results = null;
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_term = '%' . $_GET['search'] . '%';
-    $search_sql = 'SELECT id, author, title, publisher, published, genre FROM books WHERE title LIKE :search';
+    $search_sql = 'SELECT party, members, timing, dates FROM reserved WHERE dates LIKE :search';
     $search_stmt = $pdo->prepare($search_sql);
     $search_stmt->execute(['search' => $search_term]);
     $search_results = $search_stmt->fetchAll();
@@ -41,28 +41,27 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['author']) && isset($_POST['title']) && isset($_POST['publisher']) && isset($_POST['published']) && isset($_POST['genre'])) {
+    if (isset($_POST['party']) && isset($_POST['members']) && isset($_POST['timing']) && isset($_POST['dates'])) {
         // Insert new entry
-        $author = htmlspecialchars($_POST['author']);
-        $title = htmlspecialchars($_POST['title']);
-        $publisher = htmlspecialchars($_POST['publisher']);
-        $published = htmlspecialchars($_POST['published']);
-        $genre = htmlspecialchars($_POST['genre']);
+        $party = htmlspecialchars($_POST['party']);
+        $members = htmlspecialchars($_POST['members']);
+        $timing = htmlspecialchars($_POST['timing']);
+        $dates = htmlspecialchars($_POST['dates']);
         
-        $insert_sql = 'INSERT INTO books (author, title, publisher, published, genre) VALUES (:author, :title, :publisher, :published, :genre)';
+        $insert_sql = 'INSERT INTO reserved (party, members, timing, dates) VALUES (:party, :members, :timing, :dates)';
         $stmt_insert = $pdo->prepare($insert_sql);
-        $stmt_insert->execute(['author' => $author, 'title' => $title, 'publisher' => $publisher, 'published' => $published, 'genre' => $genre]);
+        $stmt_insert->execute(['party' => $party, 'members' => $members, 'timing' => $timing, 'dates' => $dates]);
     } elseif (isset($_POST['delete_id'])) {
         // Delete an entry
         $delete_id = (int) $_POST['delete_id'];
         
-        $delete_sql = 'DELETE FROM books WHERE id = :id';
+        $delete_sql = 'DELETE FROM reserved WHERE id = :id';
         $stmt_delete = $pdo->prepare($delete_sql);
         $stmt_delete->execute(['id' => $delete_id]);
     }
 }
 
-// Get all books for main table
+// Get all reserved for main table
 $sql = 'SELECT id, author, title, publisher, published, genre FROM books';
 $stmt = $pdo->query($sql);
 ?>
