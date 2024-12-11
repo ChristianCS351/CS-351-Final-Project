@@ -72,7 +72,7 @@ $stmt = $pdo->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Christian's Book Unbanning Program - Project 3 Altered Database</title>
-    <link rel="stylesheet" href="stylesP3.css">
+    <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="faviconbook.ico">
 </head>
 <body>
