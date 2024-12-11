@@ -441,8 +441,11 @@ td {
 }
 
 a {
-    color:goldenrod;
+    color:rgb(47, 139, 85);
     font-family: cooper;
+    font-size: 23px;
+    word-spacing: 3px;
+    font-weight: bold;
 }
 
 .circle-image img {
@@ -797,12 +800,13 @@ h5 {
 }
 
 label {
-    color: rgb(54, 247, 64);
+    color: rgb(117, 170, 120);
     word-spacing: 4px;
     font-family: monospace;
-    font-size: 24px;
+    font-size: 25px;
     font-style: italic;
     font-weight: bold;
+    margin-bottom: 35px;
 }
 
 input {
@@ -816,6 +820,7 @@ input {
     border-color: #f2b242;
     height: 50px;
     width: 840px;
+    margin-bottom: 35px;
 
 }
 
@@ -1029,13 +1034,13 @@ option {
 }
 
 .login-page {
-    background-color:  #f19748;
+    background-color:  #ffdeb0;
     border-radius: 8px;
     box-shadow: 3px 3px 12px rgb(119, 248, 255);
-    padding: 20px;
-    max-width: 800px;
-    margin: 150px auto;
+    max-width: 100%;
+    margin: 20px;
     text-align: center;
     border: 6px solid rgba(197, 168, 104, 0.613);
     font-family: Broadway;
+    width: 100%;
 }

@@ -30,25 +30,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body style="background-color: bisque;">
-    <div class="auth-container">
-        <h1>Login</h1>
-        <?php if ($error_message): ?>
-            <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
-        <?php endif; ?>
-        
-        <form method="POST" action="" class="auth-form">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" name="login">Login</button>
-        </form>
-        <p>No paradise account just yet? <a href="register.php">Register Here to Begin Your Paradise!</a></p>
+<body style="background-color:  #f19748;">
+    <div class="auth-container", style="width: 100%;">
+        <div class="login-page", style="width: 100%; background">
+            <h2 style="color: rgb(220, 65, 57); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Login Page*</h1>
+                <br><br><hr style=" border-radius: 2px; border: 3px dotted rgb(145, 123, 104);"><br></br>
+            <main>
+               <?php if ($error_message): ?>
+                   <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
+               <?php endif; ?>
+
+               <form method="POST" action="" class="auth-form">
+                <div>
+                    <label for="username"> Username:</label><br>
+                    <input type="text" id="username" name="username" required style="margin-left: 300px; width: 450px; text-align: center;">
+                </div>
+                <div>
+                    <label for="password"> Password:</label><br>
+                    <input type="password" id="password" name="password" required style="margin-left: 300px; width: 450px; text-align: center;">
+                </div><br><br>
+                <button type="submit" name="login" style="margin-left: 300px;">Login</button>
+                </form><br><br><br>
+                <p style="font-size: 23px; color: rgb(89, 168, 142); font-family: 'Cooper'
+                ; word-spacing: 3px; font-weight: bold;">No paradise account just yet? | <a href="register.php",>Register Here to Begin Your Paradise!</a></p>
+            </main>
+        </div>
     </div>
+    <br><br>
+    <a style="margin-left: 400px;"><img src="Taco Paraiso Official Logo.png", alt="Official Logo of Taco Paraiso"></a>
+        
 </body>
 </html>
