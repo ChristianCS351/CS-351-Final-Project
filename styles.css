@@ -857,12 +857,26 @@ option {
     color: #d57955;
     margin: 10px 0;
     font-size: 32px;
-    font-family: 'Gill Sans MT Ext Condensed Bold';
+    font-family: 'Century Gothic';
 }
 
 .card3:hover {
     background-color: #4a9c85; 
-    color: rgb(17, 76, 26); 
+    color: rgb(150, 177, 29); 
     box-shadow: 0 12px 12px rgb(18, 59, 46);; 
     border: 6px groove #426551;
+}
+
+.menu-section {
+    background-color: rgb(118, 106, 83);
+    padding-top: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    margin-left: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 42px rgb(255, 223, 167);
+    width: 96%;
+    justify-content: space-between;
 }
