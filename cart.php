@@ -35,13 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
 ```
 
-<?php
-session_start();
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
