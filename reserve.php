@@ -34,11 +34,16 @@ $error_message = '';
 
 $search_results = null;
 if (isset($_GET['search']) && !empty($_GET['search'])) {
-    $search_term = '%' . $_GET['search'] . '%';
-    $search_sql = 'SELECT party, members, timing, dates FROM reserved WHERE dates LIKE :search';
-    $search_stmt = $pdo->prepare($search_sql);
-    $search_stmt->execute(['search' => $search_term]);
-    $search_results = $search_stmt->fetchAll();
+    $search_term = $_GET['search'];
+
+    if (DateTime::createFromFormat('Y-m-d', $search_term) !== false) {
+        $search_sql = 'SELECT party, members, timing, dates FROM reserved WHERE dates LIKE :search';
+        $search_stmt = $pdo->prepare($search_sql);
+        $search_stmt->execute(['search' => '%' . $search_term . '%']);
+        $search_results = $search_stmt->fetchAll();
+    } else {
+        $error_message = "Please enter a valid date in the format YYYY-MM-DD.";
+    }
 }
 
 
@@ -143,7 +148,7 @@ $stmt = $pdo->query($sql);
         <div class="hero-search"><br><br>
             <h2 style="font-family: Algerian; font-weight: bold; font-size: 45px; color: rgb(255, 157, 44); text-align: center;"><u>Search for a date for registrations:</u></h2><br>
             <form action="" method="GET" class="search-form">
-                <label for="search">Search for Date:</label>
+                <label for="search">Search for Date (YYYY-MM-DD):</label>
                 <input type="text" id="search" name="search" required>
                 <input type="submit" value="Search"  style="width: 350px;">
             </form>
@@ -257,6 +262,7 @@ $stmt = $pdo->query($sql);
     <a href="https://www.facebook.com/">
     <img src="facebook.jpg", alt="Logo of Facebook and Link", class="image-f"></a>
     </footer>
+    
 
 </body>
 </html>

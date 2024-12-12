@@ -43,14 +43,14 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['email']) && isset($_POST['types']) && isset($_POST['item']) && isset($_POST['desciptions'])) {
+    if (isset($_POST['email']) && isset($_POST['types']) && isset($_POST['item']) && isset($_POST['descriptions'])) {
        
         $email = htmlspecialchars($_POST['email']);
-        $types = (int) htmlspecialchars($_POST['types']);
+        $types = htmlspecialchars($_POST['types']);
         $item = htmlspecialchars($_POST['item']);
-        $desciptions = htmlspecialchars($_POST['descriptions']);
+        $descriptions = htmlspecialchars($_POST['descriptions']);
 
-        $valid_types = ['Appetizer', 'Entree', 'Alcohol', 'Desert', 'Drink'];
+        $valid_types = ['Appetizer', 'Entree', 'Alcohol', 'Dessert', 'Drink'];
         if (!in_array($types, $valid_types)) {
             $error_message = "Invalid menu type. Must be one of: Appetizer, Entree, Alcohol, Desert, or Drink.";
         }
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($error_message)) {
             $insert_sql = 'INSERT INTO contest (email, types, item, descriptions) VALUES (:email, :types, :item, :descriptions)';
             $stmt_insert = $pdo->prepare($insert_sql);
-            $stmt_insert->execute(['email' => $email, 'types' => $types, 'item' => $item, 'descriptions' => $desciptions]);
+            $stmt_insert->execute(['email' => $email, 'types' => $types, 'item' => $item, 'descriptions' => $descriptions]);
         }
     } elseif (isset($_POST['delete_email'])) {
       
@@ -139,18 +139,18 @@ $stmt = $pdo->query($sql);
                             <thead>
                                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); margin-bottom: 21px;">
                                     <th>Your Email:</th>
-                                    <th>Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</th>
+                                    <th>Menu Type (Entree, Drink, Alcohol, Dessert, Appetizer):</th>
                                     <th>Menu Item:</th>
                                     <th>Description of Item:</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
-                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); word-spacing: 2px; margin-bottom: 21px">
+                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; color: rgb(53, 120, 70); word-spacing: 2px; margin-bottom: 21px">
                                     <td><?php echo htmlspecialchars($row['email']); ?></td>
                                     <td><?php echo htmlspecialchars($row['types']); ?></td>
                                     <td><?php echo htmlspecialchars($row['item']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['descriptions']); ?></td>
+                                    <td style="font-size: 12px;"><?php echo htmlspecialchars($row['descriptions']); ?></td>
                                     <td>
                                         <form action="contest.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_email" value="<?php echo $row['email']; ?>">
@@ -176,7 +176,7 @@ $stmt = $pdo->query($sql);
             <thead>
                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); margin-bottom: 21px;">
                     <th>Your Email:</th>
-                    <th>Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</th>
+                    <th>Menu Type (Entree, Drink, Alcohol, Dessert, Appetizer):</th>
                     <th>Menu Item:</th>
                     <th>Description of Item:</th>
                 </tr>
@@ -187,7 +187,7 @@ $stmt = $pdo->query($sql);
                     <td><?php echo htmlspecialchars($row['email']); ?></td>
                     <td><?php echo htmlspecialchars($row['types']); ?></td>
                     <td><?php echo htmlspecialchars($row['item']); ?></td>
-                    <td><?php echo htmlspecialchars($row['description']); ?></td>
+                    <td style="font-size: 12px;"><?php echo htmlspecialchars($row['descriptions']); ?></td>
                     <td>
                         <form action="contest.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_email" value="<?php echo $row['email']; ?>">
@@ -217,7 +217,7 @@ $stmt = $pdo->query($sql);
             <input type="text" id="item" name="item" required  style="width: 840px;">
             <br><br>
             <label for="descriptions" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Description of Item:</label>
-            <input type="text" id="descriptions" name="decriptions" required  style="width: 840px;">
+            <input type="text" id="descriptions" name="descriptions" required  style="width: 840px;">
             <br><br><br><br>
             <input type="submit" value="--> Enter Contest! <--" style="margin-left: 750px; width: 35%;">
         </form>
