@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body style="background-color:  #f19748;">
     <a style="margin-left: 100px;"><img src="Taco Paraiso Official Logo.png", alt="Official Logo of Taco Paraiso", style="height:406px; width:400px;"></a><br><br>
-    <div class="auth-container", style="width: 100%;">
-        <div class="login-page", style="width: 100%; background">
+    <div class="auth-container">
+        <div class="login-page">
             <h2 style="color: rgb(220, 65, 57); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Login Page*</h1>
                 <br><br><hr style=" border-radius: 2px; border: 3px dotted rgb(145, 123, 104);"><br></br>
             <main>
