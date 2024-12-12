@@ -1,12 +1,3 @@
-The `cart` itself doesn't need to be changed if it's already working correctly for adding and displaying items. However, let's ensure it integrates smoothly with the `checkout.php` and `submission.php` scripts. Here are a few things to check:
-
-1. **Session Management**: Ensure that the cart is properly managed within the session.
-2. **Data Structure**: Confirm that the cart's data structure matches what `checkout.php` and `submission.php` expect.
-
-### Example of Adding Items to the Cart
-Make sure you have a script to add items to the cart. Here's a simple example:
-
-```php
 <?php
 session_start();
 
@@ -21,16 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'price' => $_POST['price']
     );
     $_SESSION['cart'][] = $item;
-    header('Location: menu.html'); // Redirect back to the menu page
+    header('Location: menu.html'); 
     exit();
 }
 ?>
 ```
 
-### Example Form to Add Items
-Ensure your menu items have a form to add them to the cart:
 
-```html
 <form action="add_to_cart.php" method="post">
     <input type="hidden" name="name" value="Guacamole Tropical">
     <input type="hidden" name="price" value="7.99">
@@ -40,10 +28,6 @@ Ensure your menu items have a form to add them to the cart:
 </form>
 ```
 
-### `checkout.php` Example
-Ensure `checkout.php` correctly displays the cart items:
-
-```php
 <?php
 session_start();
 if (!isset($_SESSION['cart'])) {
@@ -54,7 +38,7 @@ if (!isset($_SESSION['cart'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Checkout - Taco Paraiso</title>
+    <title>Your Cart- Taco Paraiso</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -88,8 +72,6 @@ if (!isset($_SESSION['cart'])) {
 </html>
 ```
 
-### `submission.php` Example
-Ensure `submission.php` saves the cart items to the database:
 
 ```php
 <?php
@@ -101,10 +83,10 @@ $username = "root";
 $password = "mysql"; 
 $dbname = "checkout";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -116,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("isid", $user_id, $item['name'], $item['quantity'], $item['price']);
         $stmt->execute();
     }
-    $_SESSION['cart'] = array(); // Clear the cart
+    $_SESSION['cart'] = array();
     header('Location: history.php');
     exit();
 }
@@ -126,4 +108,3 @@ $conn->close();
 ?>
 ```
 
-If your cart is already set up like this, you should be good to go. If you need any further adjustments or have specific questions, feel free to ask!

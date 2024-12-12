@@ -4,8 +4,8 @@ $user_id = 1; // Replace with the actual user ID from your authentication system
 
 $servername = "localhost";
 $username = "root"; // Replace with your database username
-$password = ""; // Replace with your database password
-$dbname = "taco_paraiso";
+$password = "mysql"; // Replace with your database password
+$dbname = "checkout";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($_SESSION['cart'] as $item) {
-        $sql = "INSERT INTO orders (user_id, item_name, quantity, price) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO onlineorder (user_id, menu_name, quantity, price) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("isid", $user_id, $item['name'], $item['quantity'], $item['price']);
         $stmt->execute();
