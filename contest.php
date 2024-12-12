@@ -50,6 +50,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $item = htmlspecialchars($_POST['item']);
         $desciptions = htmlspecialchars($_POST['descriptions']);
 
+        $valid_types = ['Appetizer', 'Entree', 'Alcohol', 'Desert', 'Drink'];
+        if (!in_array($types, $valid_types)) {
+            $error_message = "Invalid menu type. Must be one of: Appetizer, Entree, Alcohol, Desert, or Drink.";
+        }
+
+
+        $check_sql = 'SELECT COUNT(*) FROM contest WHERE email = :email';
+        $stmt_check = $pdo->prepare($check_sql);
+        $stmt_check->execute(['email' => $email]);
+        $email_count = $stmt_check->fetchColumn();
+        
+        if ($email_count > 0) {
+            $error_message = "This email has already entered the contest.";
+        }
+
    
         if (empty($error_message)) {
             $insert_sql = 'INSERT INTO contest (email, types, item, descriptions) VALUES (:email, :types, :item, :descriptions)';
@@ -76,8 +91,8 @@ $stmt = $pdo->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
     <title>Winter Contest Page - Taco Paraíso</title>
-    <link rel="stylesheet" href="styles3.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles4.css">
+    <link rel="icon" type="image/x-icon" href="favicon1.ico">
 </head>
 <header>
     <br>
@@ -90,11 +105,11 @@ $stmt = $pdo->query($sql);
     <img src="Taco Paraiso Official Logo.png", alt="Logo of Taco Paraíso", style="height:406px; width:400px;">
 </header>
 
-<body style="background-color: bisque;">
+<body style="background-color: rgb(208, 255, 245);">
     <nav class="nav">
         <table class="nav-table">
             <tr>
-                <b style="color: rgb(241, 132, 85);"></b><th style="background-color: rgb(255, 232, 57);"><a href="index.html">Home</a></th></b>
+                <th><a href="home.html">Home</a></th>
                 <th><a href="about.html">About</a></th>
                 <th><a href="menu.html">Menu</a></th>
                 <th><a href="news.html">News</a></th>
@@ -104,14 +119,14 @@ $stmt = $pdo->query($sql);
         </table>
     </nav>
     <br><br><br><br>
-    <h5 style="margin-bottom: 25px; color: rgb(199, 88, 19);">Taco Paraiso - Registration</h5>
-    <hr style="  border: 3px dashed rgb(255, 98, 20);"><br><br><br>
+    <h5 style="margin-bottom: 25px; color: rgb(6, 38, 162);">Taco Paraiso - Winter Menu Contest</h5>
+    <hr style="  border: 3px dashed rgb(119, 229, 187);"><br><br><br>
     <div class="hero-section">
         
         <div class="hero-search"><br><br>
-            <h2 style="font-family: Algerian; font-weight: bold; font-size: 45px; color: rgb(255, 157, 44); text-align: center;"><u>Search for a date for registrations:</u></h2><br>
+            <h2 style="font-family: Algerian; font-style: italic; font-size: 48px; color: rgb(235, 92, 121); text-align: center;"><u>Search for Created Menu Items:</u></h2><br>
             <form action="" method="GET" class="search-form">
-                <label for="search">Search for Date:</label>
+                <label for="search">Search For Menu Contest Type:</label>
                 <input type="text" id="search" name="search" required>
                 <input type="submit" value="Search"  style="width: 350px;">
             </form>
@@ -122,7 +137,7 @@ $stmt = $pdo->query($sql);
                     <?php if ($search_results && count($search_results) > 0): ?>
                         <table>
                             <thead>
-                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; margin-bottom: 20px;">
+                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); margin-bottom: 21px;">
                                     <th>Your Email:</th>
                                     <th>Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</th>
                                     <th>Menu Item:</th>
@@ -131,7 +146,7 @@ $stmt = $pdo->query($sql);
                             </thead>
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
-                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 2px">
+                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); word-spacing: 2px; margin-bottom: 21px">
                                     <td><?php echo htmlspecialchars($row['email']); ?></td>
                                     <td><?php echo htmlspecialchars($row['types']); ?></td>
                                     <td><?php echo htmlspecialchars($row['item']); ?></td>
@@ -147,7 +162,7 @@ $stmt = $pdo->query($sql);
                             </tbody>
                         </table>
                     <?php else: ?>
-                        <p style="font-style: italic; color: rgb(255, 102, 0);"><br><br>*There are no registrations for this particular day, enter another date*</p><br><br>
+                        <p style="font-style: italic; color: rgb(255, 102, 0);"><br><br>*There are entrees with this food menu type, maybe try making this type:*</p><br><br>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -155,11 +170,11 @@ $stmt = $pdo->query($sql);
     </div>
 
     <div class="table-container">
-        <h2>All Recorded registrations!</h2>
-        <hr style="border: 2px solid rgb(145, 121, 109); width: 37%"><br><br><br>
+        <h2>All Contest Participants!</h2>
+        <hr style="border: 2px dashed rgba(120, 168, 171, 0.959); width: 32%"><br><br><br>
         <table class="half-width-left-align">
             <thead>
-                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; margin-bottom: 20px;">
+                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); margin-bottom: 21px;">
                     <th>Your Email:</th>
                     <th>Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</th>
                     <th>Menu Item:</th>
@@ -168,7 +183,7 @@ $stmt = $pdo->query($sql);
             </thead>
             <tbody>
                 <?php while ($row = $stmt->fetch()): ?>
-                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 2px;">
+                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); margin-bottom: 21px;">
                     <td><?php echo htmlspecialchars($row['email']); ?></td>
                     <td><?php echo htmlspecialchars($row['types']); ?></td>
                     <td><?php echo htmlspecialchars($row['item']); ?></td>
@@ -186,25 +201,25 @@ $stmt = $pdo->query($sql);
     </div>
 
     <div class="form-container">
-        <h2>Please Make Your Registration Here!</h2>
-        <hr style="border: 2px solid rgb(145, 121, 109); width: 49.5%"><br><br><br>
+        <h2>Please Fill Out Your Menu Item Here!</h2>
+        <hr style="border: 2px dashed rgba(120, 168, 171, 0.952); width: 49.5%"><br><br><br>
         <?php if (!empty($error_message)): ?>
             <p class="error-message" style="font-style: italic; color: darkred; font-size: 45px; text-align: center;"><?php echo $error_message; ?></p><br><br>
         <?php endif; ?>
         <form action="contest.php" method="post">
-            <label for="email" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Party Name:</label>
+            <label for="email" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(46, 161, 115);">Enter Email:</label>
             <input type="text" id="email" name="email" required style="width: 840px;">
             <br><br>
-            <label for="types" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Total Members in Party:</label>
-            <input type="number" id="types" name="types" required>
+            <label for="types" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</label>
+            <input type="text" id="types" name="types" required  style="width: 840px;">
             <br><br>
-            <label for="item" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Time:</label>
-            <input type="time" id="item" name="item" required>
+            <label for="item" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Enter Menu Item Name:</label>
+            <input type="text" id="item" name="item" required  style="width: 840px;">
             <br><br>
-            <label for="descriptions" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Date:</label>
-            <input type="date" id="descriptions" name="decriptions" required>
+            <label for="descriptions" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Description of Item:</label>
+            <input type="text" id="descriptions" name="decriptions" required  style="width: 840px;">
             <br><br><br><br>
-            <input type="submit" value="--> Book Your Registration! <--" style="margin-left: 750px; width: 35%;">
+            <input type="submit" value="--> Enter Contest! <--" style="margin-left: 750px; width: 35%;">
         </form>
     </div>
     <br><br><br>
