@@ -9,15 +9,6 @@ if (!is_logged_in()) {
     exit;
 } 
 
-session_start();
-require_once 'auth.php';
-
-// Check if user is logged in
-if (!is_logged_in()) {
-    header('Location: login.php');
-    exit;
-} 
-
 $host = 'localhost'; 
 $dbname = 'reserving'; 
 $user = 'root'; 
@@ -36,6 +27,9 @@ try {
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
+
+// Initialize error message
+$error_message = '';
 
 // Handle book search
 $search_results = null;
@@ -58,8 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Check members limit
         if ($members > 10) {
-            echo "Members cannot exceed 10.";
-            exit;
+            $error_message = "Members cannot exceed 10.";
         }
 
         // Check time range
@@ -67,36 +60,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $start_time = strtotime('09:00');
         $end_time = strtotime('23:00');
         if ($time < $start_time || $time > $end_time) {
-            echo "Time must be between 9 AM and 11 PM.";
-            exit;
+            $error_message = "Time must be between 9 AM and 11 PM.";
         }
 
         // Check date range (Monday to Saturday)
         $day_of_week = date('N', strtotime($dates));
         if ($day_of_week > 6) {
-            echo "Date must be between Monday and Saturday.";
-            exit;
+            $error_message = "Date must be between Monday and Saturday.";
         }
 
         // Check booking within two-week window
         $current_date = date('Y-m-d');
         $max_date = date('Y-m-d', strtotime('+2 weeks'));
         if ($dates < $current_date || $dates > $max_date) {
-            echo "Date must be within a two-week window from today.";
-            exit;
+            $error_message = "Date must be within a two-week window from today.";
         }
 
         // Check if the date is today or tomorrow
         $tomorrow_date = date('Y-m-d', strtotime('+1 day'));
         if ($dates == $current_date || $dates == $tomorrow_date) {
-            echo "You cannot make a reservation for today or tomorrow.";
-            exit;
+            $error_message = "You cannot make a reservation for today or tomorrow.";
         }
 
-        // Insert new entry
-        $insert_sql = 'INSERT INTO reserved (party, members, timing, dates) VALUES (:party, :members, :timing, :dates)';
-        $stmt_insert = $pdo->prepare($insert_sql);
-        $stmt_insert->execute(['party' => $party, 'members' => $members, 'timing' => $timing, 'dates' => $dates]);
+        // If no errors, insert new entry
+        if (empty($error_message)) {
+            $insert_sql = 'INSERT INTO reserved (party, members, timing, dates) VALUES (:party, :members, :timing, :dates)';
+            $stmt_insert = $pdo->prepare($insert_sql);
+            $stmt_insert->execute(['party' => $party, 'members' => $members, 'timing' => $timing, 'dates' => $dates]);
+        }
     } elseif (isset($_POST['delete_party'])) {
         // Delete a reservation entry
         $delete_party = htmlspecialchars($_POST['delete_party']);
@@ -208,6 +199,9 @@ $stmt = $pdo->query($sql);
     <!-- Form section with container -->
     <div class="form-container">
         <h2>Please Make Your Registration Here!</h2>
+        <?php if (!empty($error_message)): ?>
+            <p class="error-message"><?php echo $error_message; ?></p>
+        <?php endif; ?>
         <form action="reserve.php" method="post">
             <label for="party">Party Name:</label>
             <input type="text" id="party" name="party" required>
@@ -226,4 +220,5 @@ $stmt = $pdo->query($sql);
     </div>
 </body>
 </html>
+```
 
