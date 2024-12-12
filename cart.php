@@ -1,5 +1,12 @@
 <?php
 session_start();
+require_once 'auth.php';
+
+// Check if user is logged in
+if (!is_logged_in()) {
+    header('Location: login.php');
+    exit;
+} 
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
@@ -72,8 +79,6 @@ if (!isset($_SESSION['cart'])) {
 </html>
 ```
 
-
-```php
 <?php
 session_start();
 $user_id = 1;

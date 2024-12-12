@@ -1,6 +1,12 @@
 <?php
 session_start();
-$user_id = 1; 
+require_once 'auth.php';
+
+// Check if user is logged in
+if (!is_logged_in()) {
+    header('Location: login.php');
+    exit;
+} 
 
 $servername = "localhost";
 $username = "root"; 
