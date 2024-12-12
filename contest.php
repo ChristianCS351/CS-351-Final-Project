@@ -109,7 +109,7 @@ $stmt = $pdo->query($sql);
     <nav class="nav">
         <table class="nav-table">
             <tr>
-                <th><a href="home.html">Home</a></th>
+                <th><a href="index.html">Home</a></th>
                 <th><a href="about.html">About</a></th>
                 <th><a href="menu.html">Menu</a></th>
                 <th><a href="news.html">News</a></th>
