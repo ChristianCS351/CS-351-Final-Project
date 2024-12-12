@@ -52,21 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    
         if (empty($error_message)) {
-            $insert_sql = 'INSERT INTO reserved (email, types, item, descriptions) VALUES (:party, :members, :timing, :dates)';
+            $insert_sql = 'INSERT INTO contest (email, types, item, descriptions) VALUES (:email, :types, :item, :descriptions)';
             $stmt_insert = $pdo->prepare($insert_sql);
-            $stmt_insert->execute(['party' => $party, 'members' => $members, 'timing' => $timing, 'dates' => $dates]);
+            $stmt_insert->execute(['email' => $email, 'types' => $types, 'item' => $item, 'descriptions' => $desciptions]);
         }
-    } elseif (isset($_POST['delete_party'])) {
+    } elseif (isset($_POST['delete_email'])) {
       
-        $delete_party = htmlspecialchars($_POST['delete_party']);
+        $delete_email = htmlspecialchars($_POST['delete_email']);
         
-        $delete_sql = 'DELETE FROM reserved WHERE party = :party';
+        $delete_sql = 'DELETE FROM contest WHERE email = :email';
         $stmt_delete = $pdo->prepare($delete_sql);
-        $stmt_delete->execute(['party' => $delete_party]);
+        $stmt_delete->execute(['email' => $delete_email]);
     }
 }
 
-$sql = 'SELECT party, members, timing, dates FROM reserved';
+$sql = 'SELECT email, types, item, descriptions FROM contest';
 $stmt = $pdo->query($sql);
 ?>
 
@@ -75,7 +75,7 @@ $stmt = $pdo->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <title>Registration Page - Taco Paraíso</title>
+    <title>Winter Contest Page - Taco Paraíso</title>
     <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -123,23 +123,23 @@ $stmt = $pdo->query($sql);
                         <table>
                             <thead>
                                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; margin-bottom: 20px;">
-                                    <th>Party Name:</th>
-                                    <th>Members in Party:</th>
-                                    <th>Time:</th>
-                                    <th>Date:</th>
+                                    <th>Your Email:</th>
+                                    <th>Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</th>
+                                    <th>Menu Item:</th>
+                                    <th>Description of Item:</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
                                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 2px">
-                                    <td><?php echo htmlspecialchars($row['party']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['members']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['timing']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['dates']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['email']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['types']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['item']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['descriptions']); ?></td>
                                     <td>
-                                        <form action="reserve.php" method="post" style="display:inline;">
-                                            <input type="hidden" name="delete_party" value="<?php echo $row['party']; ?>">
-                                            <input type="submit" value="Remove!" style= "width: 400px;"onclick="return confirm('Does your registration look good to you?');">
+                                        <form action="contest.php" method="post" style="display:inline;">
+                                            <input type="hidden" name="delete_email" value="<?php echo $row['email']; ?>">
+                                            <input type="submit" value="Remove!" style= "width: 400px;"onclick="return confirm('Ho! Ho! Ho! Are You Sure?');">
                                         </form>
                                     </td>
                                 </tr>
@@ -160,23 +160,23 @@ $stmt = $pdo->query($sql);
         <table class="half-width-left-align">
             <thead>
                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; margin-bottom: 20px;">
-                     <th>Party Name:</th>
-                     <th>Members in Party:</th>
-                     <th>Time:</th>
-                     <th>Date:</th>
+                    <th>Your Email:</th>
+                    <th>Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</th>
+                    <th>Menu Item:</th>
+                    <th>Description of Item:</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = $stmt->fetch()): ?>
                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 2px;">
-                    <td><?php echo htmlspecialchars($row['party']); ?></td>
-                    <td><?php echo htmlspecialchars($row['members']); ?></td>
-                    <td><?php echo htmlspecialchars($row['timing']); ?></td>
-                    <td><?php echo htmlspecialchars($row['dates']); ?></td>
+                    <td><?php echo htmlspecialchars($row['email']); ?></td>
+                    <td><?php echo htmlspecialchars($row['types']); ?></td>
+                    <td><?php echo htmlspecialchars($row['item']); ?></td>
+                    <td><?php echo htmlspecialchars($row['description']); ?></td>
                     <td>
-                        <form action="reserve.php" method="post" style="display:inline;">
-                            <input type="hidden" name="delete_party" value="<?php echo $row['party']; ?>">
-                            <input type="submit" value="Remove!" style= "width: 200px; margin-left: 300px;" onclick="return confirm('Do you really want to remove this registration?');">
+                        <form action="contest.php" method="post" style="display:inline;">
+                            <input type="hidden" name="delete_email" value="<?php echo $row['email']; ?>">
+                            <input type="submit" value="Remove!" style= "width: 200px; margin-left: 300px;" onclick="return confirm('Ho! Ho! Ho! Are You Sure?');">
                         </form>
                     </td>
                 </tr>
@@ -191,18 +191,18 @@ $stmt = $pdo->query($sql);
         <?php if (!empty($error_message)): ?>
             <p class="error-message" style="font-style: italic; color: darkred; font-size: 45px; text-align: center;"><?php echo $error_message; ?></p><br><br>
         <?php endif; ?>
-        <form action="reserve.php" method="post">
-            <label for="party" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Party Name:</label>
-            <input type="text" id="party" name="party" required style="width: 840px;">
+        <form action="contest.php" method="post">
+            <label for="email" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Party Name:</label>
+            <input type="text" id="email" name="email" required style="width: 840px;">
             <br><br>
-            <label for="members" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Total Members in Party:</label>
-            <input type="number" id="members" name="members" required>
+            <label for="types" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Total Members in Party:</label>
+            <input type="number" id="types" name="types" required>
             <br><br>
-            <label for="timing" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Time:</label>
-            <input type="time" id="timing" name="timing" required>
+            <label for="item" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Time:</label>
+            <input type="time" id="item" name="item" required>
             <br><br>
-            <label for="dates" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Date:</label>
-            <input type="date" id="dates" name="dates" required>
+            <label for="descriptions" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Date:</label>
+            <input type="date" id="descriptions" name="decriptions" required>
             <br><br><br><br>
             <input type="submit" value="--> Book Your Registration! <--" style="margin-left: 750px; width: 35%;">
         </form>
