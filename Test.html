@@ -50,6 +50,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $item = htmlspecialchars($_POST['item']);
         $desciptions = htmlspecialchars($_POST['descriptions']);
 
+        $valid_types = ['Appetizer', 'Entree', 'Alcohol', 'Desert', 'Drink'];
+        if (!in_array($types, $valid_types)) {
+            $error_message = "Invalid menu type. Must be one of: Appetizer, Entree, Alcohol, Desert, or Drink.";
+        }
+
+
+        $check_sql = 'SELECT COUNT(*) FROM contest WHERE email = :email';
+        $stmt_check = $pdo->prepare($check_sql);
+        $stmt_check->execute(['email' => $email]);
+        $email_count = $stmt_check->fetchColumn();
+        
+        if ($email_count > 0) {
+            $error_message = "This email has already entered the contest.";
+        }
+
    
         if (empty($error_message)) {
             $insert_sql = 'INSERT INTO contest (email, types, item, descriptions) VALUES (:email, :types, :item, :descriptions)';
@@ -109,7 +124,7 @@ $stmt = $pdo->query($sql);
     <div class="hero-section">
         
         <div class="hero-search"><br><br>
-            <h2 style="font-family: Algerian; font-style: italic; font-size: 48px; color: rgb(223, 57, 90); text-align: center;"><u>Search for a date for registrations:</u></h2><br>
+            <h2 style="font-family: Algerian; font-style: italic; font-size: 48px; color: rgb(235, 92, 121); text-align: center;"><u>Search for Created Menu Items:</u></h2><br>
             <form action="" method="GET" class="search-form">
                 <label for="search">Search For Menu Contest Type:</label>
                 <input type="text" id="search" name="search" required>
@@ -156,7 +171,7 @@ $stmt = $pdo->query($sql);
 
     <div class="table-container">
         <h2>All Contest Participants!</h2>
-        <hr style="border: 2px dashed rgba(120, 168, 171, 0.959); width: 37%"><br><br><br>
+        <hr style="border: 2px dashed rgba(120, 168, 171, 0.959); width: 32%"><br><br><br>
         <table class="half-width-left-align">
             <thead>
                 <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 23px; color: rgb(53, 120, 70); margin-bottom: 21px;">
@@ -192,17 +207,17 @@ $stmt = $pdo->query($sql);
             <p class="error-message" style="font-style: italic; color: darkred; font-size: 45px; text-align: center;"><?php echo $error_message; ?></p><br><br>
         <?php endif; ?>
         <form action="contest.php" method="post">
-            <label for="email" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Party Name:</label>
+            <label for="email" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(46, 161, 115);">Enter Email:</label>
             <input type="text" id="email" name="email" required style="width: 840px;">
             <br><br>
-            <label for="types" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Total Members in Party:</label>
-            <input type="number" id="types" name="types" required>
+            <label for="types" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Menu Type (Entree, Drink, Alcohol, Desert, Appetizer):</label>
+            <input type="text" id="types" name="types" required  style="width: 840px;">
             <br><br>
-            <label for="item" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Time:</label>
-            <input type="time" id="item" name="item" required>
+            <label for="item" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Enter Menu Item Name:</label>
+            <input type="text" id="item" name="item" required  style="width: 840px;">
             <br><br>
-            <label for="descriptions" style="font-size: 30px; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 124, 63);">Date:</label>
-            <input type="date" id="descriptions" name="decriptions" required>
+            <label for="descriptions" style="font-size: 27px; font-family: Georgia, 'Times New Roman', Times, serif; color:rgb(46, 161, 115);">Description of Item:</label>
+            <input type="text" id="descriptions" name="decriptions" required  style="width: 840px;">
             <br><br><br><br>
             <input type="submit" value="--> Enter Contest! <--" style="margin-left: 750px; width: 35%;">
         </form>

@@ -171,7 +171,7 @@ $stmt = $pdo->query($sql);
                                     <td>
                                         <form action="reserve.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_party" value="<?php echo $row['party']; ?>">
-                                            <input type="submit" value="Remove!" style= "width: 400px;"onclick="return confirm('Does your registration look good to you?');">
+                                            <input type="submit" value="Remove!" style= "width: 400px;"onclick="return confirm('Are You Sure??');">
                                         </form>
                                     </td>
                                 </tr>
