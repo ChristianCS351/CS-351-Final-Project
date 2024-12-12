@@ -880,3 +880,34 @@ option {
     width: 96%;
     justify-content: space-between;
 }
+
+
+.rule-experience {
+    display: inline-block;
+    background-color: #ff6767;
+    color: #d6b52f;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    text-decoration: dashed;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px rgb(0, 0, 0);
+}
+
+.rule-experience:hover {
+    background-color: #ffcaca;
+    color: #ffe2a4;
+    box-shadow: 0 3px 12px rgb(255, 255, 255);
+}
+
+.rule-page {
+    background-color: #e2ceaf;
+    border-radius: 8px;
+    box-shadow: 0 3px 25px rgb(0, 0, 0);
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    border: 6px dashed rgba(98, 78, 105, 0.682);
+    font-family: Broadway;
+}
