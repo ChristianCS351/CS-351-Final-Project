@@ -12,6 +12,7 @@ body {
     width: 100%;
     overflow: hidden;  /* Contains the floated elements */
     margin-bottom: 40px;
+    border: 1px gold;
 }
 
 table {
@@ -367,6 +368,8 @@ h2 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     word-spacing: 3px;
     line-height: 1.5;
+    color: #afa26c;
+    margin-bottom: 30px;
 }
 
 .box1 {
@@ -1077,7 +1080,7 @@ option {
 }
 
 
-submit {
+.submit {
     color: rgb(140, 255, 63);
     word-spacing: 6px;
     font-family: Georgia, 'Times New Roman', Times, serif;
