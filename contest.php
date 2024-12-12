@@ -35,7 +35,7 @@ $error_message = '';
 $search_results = null;
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_term = '%' . $_GET['search'] . '%';
-    $search_sql = 'SELECT email, members, timing, dates FROM contest WHERE dates LIKE :search';
+    $search_sql = 'SELECT email, types, item, descriptions FROM contest WHERE types LIKE :search';
     $search_stmt = $pdo->prepare($search_sql);
     $search_stmt->execute(['search' => $search_term]);
     $search_results = $search_stmt->fetchAll();
@@ -43,48 +43,16 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['party']) && isset($_POST['members']) && isset($_POST['timing']) && isset($_POST['dates'])) {
+    if (isset($_POST['email']) && isset($_POST['types']) && isset($_POST['item']) && isset($_POST['desciptions'])) {
        
-        $party = htmlspecialchars($_POST['party']);
-        $members = (int) htmlspecialchars($_POST['members']);
-        $timing = htmlspecialchars($_POST['timing']);
-        $dates = htmlspecialchars($_POST['dates']);
-        
-      
-        if ($members > 10) {
-            $error_message = "Members cannot exceed 10.";
-        }
-
-       
-        $time = strtotime($timing);
-        $start_time = strtotime('09:00');
-        $end_time = strtotime('23:00');
-        if ($time < $start_time || $time > $end_time) {
-            $error_message = "Time must be between 9 AM and 11 PM.";
-        }
-
-       
-        $day_of_week = date('N', strtotime($dates));
-        if ($day_of_week > 6) {
-            $error_message = "Date must be between Monday and Saturday.";
-        }
-
-    
-        $current_date = date('Y-m-d');
-        $max_date = date('Y-m-d', strtotime('+2 weeks'));
-        if ($dates < $current_date || $dates > $max_date) {
-            $error_message = "Date must be within a two-week window from today.";
-        }
-
-      
-        $tomorrow_date = date('Y-m-d', strtotime('+1 day'));
-        if ($dates == $current_date || $dates == $tomorrow_date) {
-            $error_message = "You cannot make a reservation for today or tomorrow.";
-        }
+        $email = htmlspecialchars($_POST['email']);
+        $types = (int) htmlspecialchars($_POST['types']);
+        $item = htmlspecialchars($_POST['item']);
+        $desciptions = htmlspecialchars($_POST['descriptions']);
 
    
         if (empty($error_message)) {
-            $insert_sql = 'INSERT INTO reserved (party, members, timing, dates) VALUES (:party, :members, :timing, :dates)';
+            $insert_sql = 'INSERT INTO reserved (email, types, item, descriptions) VALUES (:party, :members, :timing, :dates)';
             $stmt_insert = $pdo->prepare($insert_sql);
             $stmt_insert->execute(['party' => $party, 'members' => $members, 'timing' => $timing, 'dates' => $dates]);
         }
