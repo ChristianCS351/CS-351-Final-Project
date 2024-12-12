@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_insert = $pdo->prepare($insert_sql);
         $stmt_insert->execute(['party' => $party, 'members' => $members, 'timing' => $timing, 'dates' => $dates]);
     } elseif (isset($_POST['delete_id'])) {
-        // Delete an entry
+        // Delete a reservation entry
         $delete_id = (int) $_POST['delete_id'];
         
         $delete_sql = 'DELETE FROM reserved WHERE id = :id';
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Get all reserved for main table
-$sql = 'SELECT id, author, title, publisher, published, genre FROM books';
+$sql = 'SELECT party, members, timing, dates FROM reserved';
 $stmt = $pdo->query($sql);
 ?>
 
@@ -70,19 +70,20 @@ $stmt = $pdo->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Christian's Book Unbanning Program - Project 3 Altered Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - Taco Paraíso</title>
     <link rel="stylesheet" href="styles3.css">
-    <link rel="icon" type="image/x-icon" href="faviconbook.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1 class="hero-title">Christian's Book Unbanning Program - Project 3 Altered Database</h1>
-        <p class="hero-subtitle">"What is better than banning books? Unbanning the banned books of course!"</p>
+        <h1 class="hero-title">Taco Paraiso - Registration</h1>
+        <p class="hero-subtitle">"Make your reservation today"</p>
         
         <!-- Search moved to hero section -->
         <div class="hero-search">
-            <h2>Search for a Book to Advocate to Unban:</h2>
+            <h2>Search for a date for registrations:</h2>
             <form action="" method="GET" class="search-form">
                 <label for="search">Search by Book Title:</label>
                 <input type="text" id="search" name="search" required>
@@ -96,28 +97,22 @@ $stmt = $pdo->query($sql);
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Publisher</th>
-                                    <th>Published</th>
-                                    <th>Genre</th>
-                                    <th>Actions</th>
+                                    <th>Party Name:</th>
+                                    <th>Members in Party:</th>
+                                    <th>Time:</th>
+                                    <th>Date:</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($row['id']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['author']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['title']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['published']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['genre']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['party']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['members']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['timing']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['dates']); ?></td>
                                     <td>
-                                        <form action="index4.php" method="post" style="display:inline;">
-                                            <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                            <input type="submit" value="Remove!" onclick="return confirm('Do you really want to unban this book?');">
+                                        <form action="reserve.php" method="post" style="display:inline;">
+                                            <input type="submit" value="Remove!" onclick="return confirm('Does your registration look good to you?');">
                                         </form>
                                     </td>
                                 </tr>
@@ -125,7 +120,7 @@ $stmt = $pdo->query($sql);
                             </tbody>
                         </table>
                     <?php else: ?>
-                        <p>No books were found during your search, please type a valid book.</p>
+                        <p>There are no registrations for this particular day.</p>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -134,32 +129,27 @@ $stmt = $pdo->query($sql);
 
     <!-- Table section with container -->
     <div class="table-container">
-        <h2>All Books in Database to be Unbanned</h2>
+        <h2>All Recorded registrations!</h2>
         <table class="half-width-left-align">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Author</th>
-                    <th>Title</th>
-                    <th>Publisher</th>
-                    <th>Published</th>
-                    <th>Genre</th>
-                    <th>Actions</th>
+                     <th>Party Name:</th>
+                     <th>Members in Party:</th>
+                     <th>Time:</th>
+                     <th>Date:</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = $stmt->fetch()): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($row['id']); ?></td>
-                    <td><?php echo htmlspecialchars($row['author']); ?></td>
-                    <td><?php echo htmlspecialchars($row['title']); ?></td>
-                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
-                    <td><?php echo htmlspecialchars($row['published']); ?></td>
-                    <td><?php echo htmlspecialchars($row['genre']); ?></td>
+                    <td><?php echo htmlspecialchars($row['party']); ?></td>
+                    <td><?php echo htmlspecialchars($row['members']); ?></td>
+                    <td><?php echo htmlspecialchars($row['timing']); ?></td>
+                    <td><?php echo htmlspecialchars($row['dates']); ?></td>
                     <td>
                         <form action="index5.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                            <input type="submit" value="Remove!" onclick="return confirm('Do you really want to remove this book from being unbanned?');">
+                            <input type="submit" value="Remove!" onclick="return confirm('Do you really want to remove this registration?');">
                         </form>
                     </td>
                 </tr>
@@ -170,24 +160,21 @@ $stmt = $pdo->query($sql);
 
     <!-- Form section with container -->
     <div class="form-container">
-        <h2>Bring a Book Back to Life Today!</h2>
+        <h2>Please Make Your Registration Here!</h2>
         <form action="index5.php" method="post">
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author" required>
+            <label for="party">Party Name:</label>
+            <input type="text" id="author" name="party" required>
             <br><br>
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
+            <label for="members">Total Members in Party:</label>
+            <input type="text" id="title" name="members" required>
             <br><br>
-            <label for="publisher">Publisher:</label>
-            <input type="text" id="publisher" name="publisher" required>
+            <label for="timing">Time:</label>
+            <input type="text" id="publisher" name="timing" required>
             <br><br>
-            <label for="published">Published:</label>
-            <input type="date" id="published" name="published" required>
+            <label for="dates">date:</label>
+            <input type="date" id="published" name="dates" required>
             <br><br>
-            <label for="genre">Genre:</label>
-            <input type="text" id="genre" name="genre" required>
-            <br><br>
-            <input type="submit" value="Bring Back!">
+            <input type="submit" value="Book Your Registration!">
         </form>
     </div>
 </body>
