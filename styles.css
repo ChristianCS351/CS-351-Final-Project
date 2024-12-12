@@ -884,14 +884,14 @@ option {
 
 .rule-experience {
     display: inline-block;
-    background-image:  ;
+    background-image: url("OIP\ \(4\).jpg") ;
     color: #2fd63d;
     padding: 10px 20px;
     border: 2px solid;
     border-radius: 5px;
     text-decoration: dashed;
     margin-top: 25px;
-    box-shadow: 0 3px 12px rgb(0, 0, 0);
+    box-shadow: 0 3px 12px rgb(43, 28, 255);
 }
 
 .rule-experience:hover {
@@ -901,9 +901,9 @@ option {
 }
 
 .rule-page {
-    background-color: #e2ceaf;
+    background-color: #b9f1ff;
     border-radius: 8px;
-    box-shadow: 0 3px 25px rgb(0, 0, 0);
+    box-shadow: 0 3px 28px rgb(229, 255, 253);
     padding: 20px;
     max-width: 800px;
     margin: 40px auto;

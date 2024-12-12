@@ -103,7 +103,7 @@ h1, h2 {
 }
 
 .hero-section {
-    background-color: #ffa51f;
+    background-color: #c0ffc3;
     padding: 40px 20px;
     margin: -20px -20px 40px -20px; 
     text-align: center;
@@ -797,7 +797,7 @@ h5 {
 }
 
 label {
-    color: rgb(198, 255, 255);
+    color: rgb(39, 77, 77);
     word-spacing: 4px;
     font-family: monospace;
     font-size: 25px;
