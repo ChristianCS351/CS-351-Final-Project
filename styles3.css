@@ -40,14 +40,14 @@ th, td {
 
 form {
     width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 label {
     display: inline-block;
-    width: 70px;
+    width: 200px;
     margin-bottom: 5px;
+    margin-left: 500px;
 }
 
 input[type="text"] {
@@ -113,26 +113,15 @@ h1, h2 {
     height: 80vh;
 }
 
-.hero-title {
-    font-size: 2.5em;
-    color: #e0b272;
-    margin-bottom: 15px;
-}
 
-.hero-subtitle {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 30px;
-    font-style: italic;
-}
 
 .hero-search {
-    max-width: 600px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f5e128;
     border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 9px 20px rgba(105, 240, 231, 0.805);
 }
 
 /* Rest of your existing styles remain unchanged */
@@ -1087,3 +1076,14 @@ option {
     width: 100%;
 }
 
+
+submit {
+    color: rgb(140, 255, 63);
+    word-spacing: 6px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(255, 209, 70);
+    border: 3px groove;
+    border-color: #f25442;
+}
