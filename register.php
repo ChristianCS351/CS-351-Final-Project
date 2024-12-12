@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-    <body style="background-color:  #f19748;">
+    <body style="background-color:  #f19748; height: 1200px; width: 1200px;">
         <div class="auth-container", style="width: 100%;">
             <div class="register-page", style="width: 100%;">
                 <h2 style="color: rgb(65, 130, 74); font-family: 'Broadway'; font-size: 60px; text-align: center;">*Registration Page*</h1>

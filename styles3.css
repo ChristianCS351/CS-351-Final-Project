@@ -112,6 +112,7 @@ h1, h2 {
     width: 100%;
     padding: 0px;
     height: 80vh;
+    overflow: hidden;  /* Contains the floated elements */
 }
 
 
@@ -123,6 +124,8 @@ h1, h2 {
     background-color: #f5e128;
     border-radius: 4px;
     box-shadow: 0 9px 20px rgba(105, 240, 231, 0.805);
+    overflow: hidden;  /* Contains the floated elements */
+    height: auto;
 }
 
 /* Rest of your existing styles remain unchanged */

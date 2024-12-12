@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles3.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body style="background-color:  #f19748;">
+<body style="background-color:  #f19748; height: 1200px; width: 1200px;">
     <a style="margin-left: 100px;"><img src="Taco Paraiso Official Logo.png", alt="Official Logo of Taco Paraiso", style="height:406px; width:400px;"></a><br><br>
     <div class="auth-container">
         <div class="login-page">
