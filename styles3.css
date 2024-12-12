@@ -102,11 +102,11 @@ h1, h2 {
 }
 
 .hero-section {
-    background-color: #89f26e;
+    background-color: #ffa51f;
     padding: 40px 20px;
     margin: -20px -20px 40px -20px; 
     text-align: center;
-    border-bottom: 3px groove #47ffe7;
+    border-bottom: 3px groove #ffff00;
     box-shadow: 0 9px 12px rgba(0, 0, 0, 0.788);
     width: 100%;
     padding: 0px;
