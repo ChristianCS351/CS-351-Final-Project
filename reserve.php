@@ -126,7 +126,7 @@ $stmt = $pdo->query($sql);
     <nav class="nav">
         <table class="nav-table">
             <tr>
-                <b style="color: rgb(241, 132, 85);"></b><th style="background-color: rgb(255, 232, 57);"><a href="index.html">Home</a></th></b>
+                <th><a href="home.html">Home</a></th>
                 <th><a href="about.html">About</a></th>
                 <th><a href="menu.html">Menu</a></th>
                 <th><a href="news.html">News</a></th>
@@ -163,7 +163,7 @@ $stmt = $pdo->query($sql);
                             </thead>
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
-                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 2px">
+                                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 21px">
                                     <td><?php echo htmlspecialchars($row['party']); ?></td>
                                     <td><?php echo htmlspecialchars($row['members']); ?></td>
                                     <td><?php echo htmlspecialchars($row['timing']); ?></td>
@@ -200,7 +200,7 @@ $stmt = $pdo->query($sql);
             </thead>
             <tbody>
                 <?php while ($row = $stmt->fetch()): ?>
-                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 2px;">
+                <tr style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: brown; word-spacing: 2px; margin-bottom: 21px;">
                     <td><?php echo htmlspecialchars($row['party']); ?></td>
                     <td><?php echo htmlspecialchars($row['members']); ?></td>
                     <td><?php echo htmlspecialchars($row['timing']); ?></td>
