@@ -820,6 +820,21 @@ input {
 
 }
 
+
+input:hover {
+    color: rgb(129, 133, 0);
+    word-spacing: 6px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(255, 217, 103);
+    border: 3px groove;
+    border-color: #ff8026;
+    height: 50px;
+    width: 840px;
+    margin-bottom: 35px;
+}
+
 ::placeholder {
 
     color: rgb(99, 94, 93);
